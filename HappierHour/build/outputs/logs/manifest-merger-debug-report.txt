@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:10:1-49:12
+ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:10:1-50:12
 	package
 		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:11:5-36
 		INJECTED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml
@@ -24,7 +24,7 @@ MERGED from [com.google.android.gms:play-services-measurement:8.3.0] /Users/Misa
 	android:name
 		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:14:22-76
 application
-ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:16:5-47:19
+ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:16:5-48:19
 MERGED from [com.google.android.gms:play-services-measurement:8.3.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-measurement/8.3.0/AndroidManifest.xml:26:5-46:19
 MERGED from [com.google.android.gms:play-services-basement:8.3.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/AndroidManifest.xml:20:5-24:19
 MERGED from [com.android.support:support-v4:22.2.1] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/AndroidManifest.xml:22:5-20
@@ -41,14 +41,14 @@ MERGED from [com.google.android.gms:play-services-basement:8.3.0] /Users/Misanth
 MERGED from [com.android.support:support-v4:22.2.1] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:20:9-41
+	android:supportsRtl
+		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:17:9-35
 	android:allowBackup
 		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:18:9-35
 	android:icon
 		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:19:9-40
 	android:theme
 		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:21:9-40
-	android:name
-		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:17:9-43
 meta-data#com.parse.APPLICATION_ID
 ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:22:9-24:52
 	android:value
@@ -74,7 +74,9 @@ ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/A
 	android:name
 		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:30:13-41
 activity#com.parse.happierhour.Login
-ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:33:9-41:20
+ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:33:9-42:20
+	android:screenOrientation
+		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:37:13-49
 	android:label
 		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:35:13-45
 	android:theme
@@ -82,27 +84,27 @@ ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/A
 	android:name
 		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:34:13-34
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:37:13-40:29
+ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:38:13-41:29
 	android:label
-		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:37:28-60
+		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:38:28-60
 action#android.intent.action.MAIN
-ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:38:17-69
+ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:39:17-69
 	android:name
-		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:38:25-66
+		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:39:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:39:17-77
+ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:40:17-77
 	android:name
-		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:39:27-74
+		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:40:27-74
 activity#com.facebook.FacebookActivity
-ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:42:9-46:48
+ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:43:9-47:48
 	android:label
-		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:46:13-45
+		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:47:13-45
 	android:configChanges
-		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:43:13-113
+		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:44:13-113
 	android:theme
-		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:45:13-72
+		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:46:13-72
 	android:name
-		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:42:19-63
+		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:43:19-63
 uses-sdk
 INJECTED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:multidex:1.0.1] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/multidex/1.0.1/AndroidManifest.xml:18:5-42
