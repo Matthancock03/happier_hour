@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/multidex/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6666dd525c3da197e7d07f4f23ef5fc7881a697b">
+        <dex dex="/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/pre-dexed/debug/classes-cbf88c15d603f90383c798a7a083648df5aaaedb.jar" />
+    </item>
+
+</items>
