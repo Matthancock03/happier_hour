@@ -28,6 +28,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 
@@ -150,7 +151,7 @@ public class Login extends AppCompatActivity implements
     @Override
     public void onStart() {
         super.onStart();
-        /*
+
         OptionalPendingResult<GoogleSignInResult> opr = Auth.GoogleSignInApi.silentSignIn(mGoogleApiClient);
         if (opr.isDone()) {
             // If the user's cached credentials are valid, the OptionalPendingResult will be "done"
@@ -171,7 +172,7 @@ public class Login extends AppCompatActivity implements
                 }
             });
            }
-            */
+
     }
 
     // [START handleSignInResult]

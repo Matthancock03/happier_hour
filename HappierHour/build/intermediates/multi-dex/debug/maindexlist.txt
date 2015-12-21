@@ -100,6 +100,7 @@ android/support/design/R.class
 android/support/design/widget/AppBarLayout$Behavior$1.class
 com/parse/happierhour/Login.class
 android/support/design/widget/Snackbar$6.class
+com/parse/happierhour/Login$4.class
 android/support/v4/view/ViewCompat.class
 android/support/design/widget/TabLayout$TabGravity.class
 android/support/v4/util/SimpleArrayMap.class
@@ -156,6 +157,7 @@ android/support/v4/widget/SlidingPaneLayout.class
 com/google/android/gms/common/api/GoogleApiClient.class
 android/support/design/widget/SnackbarManager.class
 android/support/v7/internal/view/menu/MenuItemImpl.class
+com/facebook/Profile.class
 android/support/design/widget/AppBarLayout$Behavior$FlingRunnable.class
 android/support/design/widget/CoordinatorLayoutInsetsHelperLollipop.class
 android/support/v4/app/SuperNotCalledException.class
@@ -217,6 +219,7 @@ android/support/design/R$styleable.class
 android/support/design/widget/SwipeDismissBehavior$OnDismissListener.class
 com/facebook/CallbackManager$Factory.class
 android/support/design/widget/AppBarLayout$ScrollingViewBehavior.class
+com/google/android/gms/common/api/OptionalPendingResult.class
 com/parse/ParseQuery.class
 android/support/v7/app/ActionBar.class
 com/google/android/gms/auth/api/signin/EmailSignInOptions.class
@@ -282,6 +285,7 @@ android/support/v7/app/ActionBarActivity.class
 android/support/annotation/FractionRes.class
 android/support/v4/app/BackStackRecord$TransitionState.class
 android/support/annotation/PluralsRes.class
+com/facebook/AccessToken.class
 android/support/v4/app/FragmentActivity$1.class
 android/support/v4/content/Loader.class
 android/support/design/widget/CoordinatorLayout$LayoutParams.class

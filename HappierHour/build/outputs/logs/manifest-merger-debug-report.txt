@@ -41,14 +41,14 @@ MERGED from [com.google.android.gms:play-services-basement:8.3.0] /Users/Misanth
 MERGED from [com.android.support:support-v4:22.2.1] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:20:9-41
-	android:supportsRtl
-		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:17:9-35
 	android:allowBackup
 		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:18:9-35
 	android:icon
 		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:19:9-40
 	android:theme
 		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:21:9-40
+	android:name
+		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:17:9-43
 meta-data#com.parse.APPLICATION_ID
 ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:22:9-24:52
 	android:value
