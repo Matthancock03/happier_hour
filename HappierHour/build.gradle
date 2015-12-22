@@ -35,11 +35,16 @@ android {
 dependencies {
     compile 'com.android.support:appcompat-v7:22.2.1'
     //compile 'com.parse.bolts:bolts-tasks:1.3.0'
-    compile ('com.parse:parse-android:1.11.0') { exclude group: 'com.parse.bolts', module: 'bolts-tasks'; }
+    compile('com.parse:parse-android:1.11.0') {
+        exclude group: 'com.parse.bolts', module: 'bolts-tasks';
+    }
     compile 'com.android.support:design:22.2.1'
     compile 'com.facebook.android:facebook-android-sdk:4.6.0'
     compile 'com.google.android.gms:play-services-auth:8.3.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.google.guava:guava:16.0.1'
+    compile 'com.google.android.gms:play-services-maps:8.3.0'
 }
 
 /* Uncomment if you enable ProGuard and you want to automatically upload symbols on build.

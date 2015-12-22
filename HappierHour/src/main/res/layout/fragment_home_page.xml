@@ -1,0 +1,28 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="com.parse.happierhour.HomePageFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Happier Hour"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/home_header"
+        android:textSize="42dp"
+        android:textStyle="bold|italic"
+        android:textColor="#dc3333"
+        android:layout_marginTop="24dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Map"
+        android:id="@+id/map_button"
+        android:layout_gravity="center"
+        android:background="#dc3333"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+
+</FrameLayout>

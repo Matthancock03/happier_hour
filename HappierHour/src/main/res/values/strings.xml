@@ -11,10 +11,14 @@
     <string name="parse_app_id">hW4rh8VwRMvqurD0OdnSbWIbDfuUBObVFzXxnjsB</string>
     <string name="parse_client_key">BJ0DJx74TU69NSPlvrIJZpWEm4906me7bVx8K3eh</string>
     <string name="facebook_app_id">224612811203647</string>
+    <string name="google_api_key">AIzaSyDwyB4H50gUvrEWUt71nx1T7LQp-3nvJqM</string>
 
     <string name="app_name">Happier Hour</string>
 
     <string name="hello_world">Hello World!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_login">Login</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
