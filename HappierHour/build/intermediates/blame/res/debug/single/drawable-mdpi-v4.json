@@ -92,12 +92,12 @@
         "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.3.0/res/drawable-mdpi/common_plus_signin_btn_icon_light_pressed.9.png"
     },
     {
-        "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_media_route_disabled_mono_dark.png",
-        "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/drawable-mdpi/ic_media_route_disabled_mono_dark.png"
-    },
-    {
         "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/drawable-mdpi-v4/messenger_button_send_round_shadow.png",
         "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.6.0/res/drawable-mdpi/messenger_button_send_round_shadow.png"
+    },
+    {
+        "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_media_route_disabled_mono_dark.png",
+        "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/drawable-mdpi/ic_media_route_disabled_mono_dark.png"
     },
     {
         "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_list_pressed_holo_light.9.png",
@@ -120,12 +120,12 @@
         "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.3.0/res/drawable-mdpi/common_plus_signin_btn_text_dark_normal.9.png"
     },
     {
-        "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png",
-        "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/drawable-mdpi/abc_btn_switch_to_on_mtrl_00001.9.png"
-    },
-    {
         "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_list_selector_disabled_holo_light.9.png",
         "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/drawable-mdpi/abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png",
+        "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/drawable-mdpi/abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
         "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/drawable-mdpi-v4/common_google_signin_btn_icon_light_focused.9.png",

@@ -143,7 +143,7 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback {
         if (myLocation != null) {
             //myLocation = new LatLng(location.getLatitude(),location.getLongitude());
             map.animateCamera(CameraUpdateFactory.newLatLngZoom(myLocation,
-                    10));
+                    11));
         }
 
     }

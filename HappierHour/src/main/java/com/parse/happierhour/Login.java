@@ -31,6 +31,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.places.Places;
 
 public class Login extends AppCompatActivity implements
         GoogleApiClient.OnConnectionFailedListener,
@@ -81,6 +82,7 @@ public class Login extends AppCompatActivity implements
             }
             intent.putExtras(bundle);
             startActivity(intent);
+            finish();
         }
 
         // Callback registration
@@ -97,6 +99,7 @@ public class Login extends AppCompatActivity implements
                 }
                 intent.putExtras(bundle);
                 startActivity(intent);
+                finish();
             }
 
             @Override
@@ -124,6 +127,8 @@ public class Login extends AppCompatActivity implements
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .enableAutoManage(this /* FragmentActivity */, this /* OnConnectionFailedListener */)
+                .addApi(Places.GEO_DATA_API)
+                .addApi(Places.PLACE_DETECTION_API)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
@@ -131,7 +136,6 @@ public class Login extends AppCompatActivity implements
         signInButton.setSize(SignInButton.SIZE_STANDARD);
         signInButton.setScopes(gso.getScopeArray());
         // End Google Sign In
-
     }
 
     @Override
@@ -264,6 +268,7 @@ public class Login extends AppCompatActivity implements
             }
             intent.putExtras(bundle);
             startActivity(intent);
+            finish();
         } else {
             mStatusTextView.setText("Not Logged In");
 
