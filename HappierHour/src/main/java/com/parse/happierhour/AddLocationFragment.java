@@ -1,14 +1,24 @@
 package com.parse.happierhour;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.places.AutocompleteFilter;
 import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlaceAutocomplete;
+import com.parse.ParseObject;
 
 
 /**
@@ -20,6 +30,13 @@ import com.google.android.gms.location.places.Place;
  * create an instance of this fragment.
  */
 public class AddLocationFragment extends Fragment {
+
+    private static final String TAG = "HomePage";
+    MainActivity main;
+    int PLACE_AUTOCOMPLETE_REQUEST_CODE = 1;
+    Place place;
+    Button saveButton;
+    Context con;
 
     private OnFragmentInteractionListener mListener;
 
@@ -47,8 +64,21 @@ public class AddLocationFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(
+                R.layout.fragment_add_location, container, false);
+        main = (MainActivity)getActivity();
+        saveButton = (Button)view.findViewById(R.id.save_location);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveLocation();
+            }
+        });
         // Inflate the layout for this fragment
+        findPlace(view);
         return inflater.inflate(R.layout.fragment_add_location, container, false);
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -75,6 +105,57 @@ public class AddLocationFragment extends Fragment {
         mListener = null;
     }
 
+    //Start Google Places search
+    public void findPlace(View view) {
+        try {
+            AutocompleteFilter typeFilter = new AutocompleteFilter.Builder()
+                    .setTypeFilter(AutocompleteFilter.TYPE_FILTER_ESTABLISHMENT)
+                    .build();
+            //Might try .setTypeFilter(Place.TYPE_BAR);
+            Intent intent =
+                    new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_FULLSCREEN)
+                            .setFilter(typeFilter)
+                            .build(getActivity());
+            startActivityForResult(intent, PLACE_AUTOCOMPLETE_REQUEST_CODE);
+        } catch (GooglePlayServicesRepairableException e) {
+            // TODO: Handle the error.
+        } catch (GooglePlayServicesNotAvailableException e) {
+            // TODO: Handle the error.
+        }
+    }
+
+    public void saveLocation(){
+
+        if(place != null) {
+            ParseObject bar = new ParseObject("Locations");
+            bar.put("Name", place.getName());
+            bar.put("LatLng", place.getLatLng());
+            bar.put("Address", place.getAddress());
+            bar.put("PhoneNumber", place.getPhoneNumber());
+            bar.saveInBackground();
+        }
+        main.swapFragment(new HomePageFragment()); //Go Back to Home Page
+    }
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == PLACE_AUTOCOMPLETE_REQUEST_CODE) {
+            if (resultCode == Activity.RESULT_OK) {
+                place = PlaceAutocomplete.getPlace(con, data);
+                Log.i(TAG, "Name: " + place.getName());
+                Log.i(TAG, "LatLng: " + place.getLatLng());
+                Log.i(TAG, "Address: " + place.getAddress());
+                Log.i(TAG, "Phone Number: " + place.getPhoneNumber());
+
+            } else if (resultCode == PlaceAutocomplete.RESULT_ERROR) {
+                Status status = PlaceAutocomplete.getStatus(con, data);
+                // TODO: Handle the error.
+                Log.i(TAG, status.getStatusMessage());
+
+            } else if (resultCode == Activity.RESULT_CANCELED) {
+                // The user canceled the operation.
+            }
+        }
+    }
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated

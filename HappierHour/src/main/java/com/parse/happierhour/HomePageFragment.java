@@ -20,6 +20,7 @@ import com.google.android.gms.location.places.GeoDataApi;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker.IntentBuilder;
 import com.google.android.gms.location.places.ui.*;
+import com.parse.ParseObject;
 
 
 /**
@@ -90,7 +91,8 @@ public class HomePageFragment extends Fragment {
         addLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                findPlace(v);
+                Log.d("Home Fragment", "Clicky Clicky");
+                main.swapFragment(new AddLocationFragment());
             }
         });
 
@@ -131,47 +133,7 @@ public class HomePageFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
-    //Start Google Places search
-    public void findPlace(View view) {
-        try {
-            AutocompleteFilter typeFilter = new AutocompleteFilter.Builder()
-                    .setTypeFilter(AutocompleteFilter.TYPE_FILTER_ESTABLISHMENT)
-                    .build();
-            //Might try .setTypeFilter(Place.TYPE_BAR);
-            Intent intent =
-                    new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_FULLSCREEN)
-                            .setFilter(typeFilter)
-                            .build(getActivity());
-            startActivityForResult(intent, PLACE_AUTOCOMPLETE_REQUEST_CODE);
-        } catch (GooglePlayServicesRepairableException e) {
-            // TODO: Handle the error.
-        } catch (GooglePlayServicesNotAvailableException e) {
-            // TODO: Handle the error.
-        }
-    }
 
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-        if (requestCode == PLACE_AUTOCOMPLETE_REQUEST_CODE) {
-            if (resultCode == Activity.RESULT_OK) {
-                Place place = PlaceAutocomplete.getPlace(con, data);
-                Log.i(TAG, "Place: " + place.getName());
-                Log.i(TAG, "LatLng: " + place.getLatLng());
-                Log.i(TAG, "Address: " + place.getAddress());
-                Log.i(TAG, "Phone Number: " + place.getPhoneNumber());
-
-
-                main.swapFragment(new AddLocationFragment());
-            } else if (resultCode == PlaceAutocomplete.RESULT_ERROR) {
-                Status status = PlaceAutocomplete.getStatus(con, data);
-                // TODO: Handle the error.
-                Log.i(TAG, status.getStatusMessage());
-
-            } else if (resultCode == Activity.RESULT_CANCELED) {
-                // The user canceled the operation.
-            }
-        }
-    }
 
     /**
      * This interface must be implemented by activities that contain this
@@ -187,5 +149,6 @@ public class HomePageFragment extends Fragment {
         // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);
     }
+
 
 }
