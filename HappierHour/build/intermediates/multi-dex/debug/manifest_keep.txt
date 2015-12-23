@@ -5,10 +5,8 @@
 -keep class com.parse.happierhour.MainActivity { <init>(); }
 -keep class com.parse.happierhour.Login { <init>(); }
 -keep class com.facebook.FacebookActivity { <init>(); }
--keep class com.google.android.gms.measurement.AppMeasurementContentProvider { <init>(); }
--keep class com.google.android.gms.measurement.AppMeasurementReceiver { <init>(); }
--keep class com.google.android.gms.measurement.AppMeasurementService { <init>(); }
 -keep class com.google.android.gms.auth.api.signin.internal.SignInHubActivity { <init>(); }
+-keep class com.google.android.gms.auth.api.signin.RevocationBoundService { <init>(); }
 -keep public class * extends android.app.backup.BackupAgent {
     <init>();
 }

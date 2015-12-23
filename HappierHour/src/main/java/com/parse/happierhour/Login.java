@@ -257,6 +257,7 @@ public class Login extends AppCompatActivity implements
         }
     }
 
+
     private void updateUI(boolean signedIn) {
         if (signedIn) {
             findViewById(R.id.sign_in_button).setVisibility(View.GONE);

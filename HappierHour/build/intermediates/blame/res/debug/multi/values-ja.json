@@ -558,17 +558,17 @@
                     "startLine": 31,
                     "startColumn": 4,
                     "startOffset": 2632,
-                    "endColumn": 168,
-                    "endOffset": 2796
+                    "endColumn": 198,
+                    "endOffset": 2826
                 },
                 "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
                     "position": {
-                        "startLine": 5,
+                        "startLine": 24,
                         "startColumn": 4,
-                        "startOffset": 453,
-                        "endColumn": 172,
-                        "endOffset": 621
+                        "startOffset": 3146,
+                        "endColumn": 202,
+                        "endOffset": 3344
                     }
                 }
             },
@@ -576,18 +576,18 @@
                 "to": {
                     "startLine": 32,
                     "startColumn": 4,
-                    "startOffset": 2801,
-                    "endColumn": 152,
+                    "startOffset": 2831,
+                    "endColumn": 122,
                     "endOffset": 2949
                 },
                 "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
                     "position": {
-                        "startLine": 18,
+                        "startLine": 10,
                         "startColumn": 4,
-                        "startOffset": 2354,
-                        "endColumn": 156,
-                        "endOffset": 2506
+                        "startOffset": 1235,
+                        "endColumn": 122,
+                        "endOffset": 1353
                     }
                 }
             },
@@ -596,17 +596,17 @@
                     "startLine": 33,
                     "startColumn": 4,
                     "startOffset": 2954,
-                    "endColumn": 106,
-                    "endOffset": 3056
+                    "endColumn": 165,
+                    "endOffset": 3115
                 },
                 "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
                     "position": {
-                        "startLine": 16,
+                        "startLine": 9,
                         "startColumn": 4,
-                        "startOffset": 2079,
-                        "endColumn": 106,
-                        "endOffset": 2181
+                        "startOffset": 1065,
+                        "endColumn": 169,
+                        "endOffset": 1230
                     }
                 }
             },
@@ -614,18 +614,18 @@
                 "to": {
                     "startLine": 34,
                     "startColumn": 4,
-                    "startOffset": 3061,
-                    "endColumn": 198,
-                    "endOffset": 3255
+                    "startOffset": 3120,
+                    "endColumn": 121,
+                    "endOffset": 3237
                 },
                 "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
                     "position": {
-                        "startLine": 30,
+                        "startLine": 8,
                         "startColumn": 4,
-                        "startOffset": 3993,
-                        "endColumn": 202,
-                        "endOffset": 4191
+                        "startOffset": 943,
+                        "endColumn": 121,
+                        "endOffset": 1060
                     }
                 }
             },
@@ -633,18 +633,18 @@
                 "to": {
                     "startLine": 35,
                     "startColumn": 4,
-                    "startOffset": 3260,
-                    "endColumn": 115,
-                    "endOffset": 3371
+                    "startOffset": 3242,
+                    "endColumn": 122,
+                    "endOffset": 3360
                 },
                 "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
                     "position": {
-                        "startLine": 14,
+                        "startLine": 7,
                         "startColumn": 4,
-                        "startOffset": 1849,
-                        "endColumn": 115,
-                        "endOffset": 1960
+                        "startOffset": 820,
+                        "endColumn": 122,
+                        "endOffset": 938
                     }
                 }
             },
@@ -652,18 +652,18 @@
                 "to": {
                     "startLine": 36,
                     "startColumn": 4,
-                    "startOffset": 3376,
-                    "endColumn": 165,
-                    "endOffset": 3537
+                    "startOffset": 3365,
+                    "endColumn": 195,
+                    "endOffset": 3556
                 },
                 "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
                     "position": {
-                        "startLine": 13,
+                        "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 1679,
-                        "endColumn": 169,
-                        "endOffset": 1844
+                        "startOffset": 421,
+                        "endColumn": 199,
+                        "endOffset": 616
                     }
                 }
             },
@@ -671,18 +671,18 @@
                 "to": {
                     "startLine": 37,
                     "startColumn": 4,
-                    "startOffset": 3542,
-                    "endColumn": 113,
-                    "endOffset": 3651
+                    "startOffset": 3561,
+                    "endColumn": 194,
+                    "endOffset": 3751
                 },
                 "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
                     "position": {
-                        "startLine": 12,
+                        "startLine": 6,
                         "startColumn": 4,
-                        "startOffset": 1565,
-                        "endColumn": 113,
-                        "endOffset": 1674
+                        "startOffset": 621,
+                        "endColumn": 198,
+                        "endOffset": 815
                     }
                 }
             },
@@ -690,18 +690,18 @@
                 "to": {
                     "startLine": 38,
                     "startColumn": 4,
-                    "startOffset": 3656,
-                    "endColumn": 163,
-                    "endOffset": 3815
+                    "startOffset": 3756,
+                    "endColumn": 121,
+                    "endOffset": 3873
                 },
                 "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
                     "position": {
-                        "startLine": 7,
+                        "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 770,
-                        "endColumn": 167,
-                        "endOffset": 933
+                        "startOffset": 299,
+                        "endColumn": 121,
+                        "endOffset": 416
                     }
                 }
             },
@@ -709,18 +709,18 @@
                 "to": {
                     "startLine": 39,
                     "startColumn": 4,
-                    "startOffset": 3820,
-                    "endColumn": 115,
-                    "endOffset": 3931
+                    "startOffset": 3878,
+                    "endColumn": 147,
+                    "endOffset": 4021
                 },
                 "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
                     "position": {
-                        "startLine": 11,
+                        "startLine": 19,
                         "startColumn": 4,
-                        "startOffset": 1449,
-                        "endColumn": 115,
-                        "endOffset": 1560
+                        "startOffset": 2477,
+                        "endColumn": 147,
+                        "endOffset": 2620
                     }
                 }
             },
@@ -728,18 +728,18 @@
                 "to": {
                     "startLine": 40,
                     "startColumn": 4,
-                    "startOffset": 3936,
-                    "endColumn": 195,
-                    "endOffset": 4127
+                    "startOffset": 4026,
+                    "endColumn": 113,
+                    "endOffset": 4135
                 },
                 "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
                     "position": {
-                        "startLine": 9,
+                        "startLine": 18,
                         "startColumn": 4,
-                        "startOffset": 1051,
-                        "endColumn": 199,
-                        "endOffset": 1246
+                        "startOffset": 2363,
+                        "endColumn": 113,
+                        "endOffset": 2472
                     }
                 }
             },
@@ -747,18 +747,18 @@
                 "to": {
                     "startLine": 41,
                     "startColumn": 4,
-                    "startOffset": 4132,
-                    "endColumn": 193,
-                    "endOffset": 4321
+                    "startOffset": 4140,
+                    "endColumn": 142,
+                    "endOffset": 4278
                 },
                 "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
                     "position": {
-                        "startLine": 10,
+                        "startLine": 17,
                         "startColumn": 4,
-                        "startOffset": 1251,
-                        "endColumn": 197,
-                        "endOffset": 1444
+                        "startOffset": 2220,
+                        "endColumn": 142,
+                        "endOffset": 2358
                     }
                 }
             },
@@ -766,18 +766,18 @@
                 "to": {
                     "startLine": 42,
                     "startColumn": 4,
-                    "startOffset": 4326,
-                    "endColumn": 112,
-                    "endOffset": 4434
+                    "startOffset": 4283,
+                    "endColumn": 115,
+                    "endOffset": 4394
                 },
                 "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
                     "position": {
-                        "startLine": 8,
+                        "startLine": 16,
                         "startColumn": 4,
-                        "startOffset": 938,
-                        "endColumn": 112,
-                        "endOffset": 1046
+                        "startOffset": 2104,
+                        "endColumn": 115,
+                        "endOffset": 2215
                     }
                 }
             },
@@ -785,126 +785,12 @@
                 "to": {
                     "startLine": 43,
                     "startColumn": 4,
-                    "startOffset": 4439,
-                    "endColumn": 147,
-                    "endOffset": 4582
-                },
-                "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
-                    "position": {
-                        "startLine": 24,
-                        "startColumn": 4,
-                        "startOffset": 3193,
-                        "endColumn": 147,
-                        "endOffset": 3336
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 44,
-                    "startColumn": 4,
-                    "startOffset": 4587,
-                    "endColumn": 116,
-                    "endOffset": 4699
-                },
-                "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
-                    "position": {
-                        "startLine": 23,
-                        "startColumn": 4,
-                        "startOffset": 3076,
-                        "endColumn": 116,
-                        "endOffset": 3188
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 45,
-                    "startColumn": 4,
-                    "startOffset": 4704,
-                    "endColumn": 143,
-                    "endOffset": 4843
-                },
-                "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 626,
-                        "endColumn": 143,
-                        "endOffset": 765
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 46,
-                    "startColumn": 4,
-                    "startOffset": 4848,
-                    "endColumn": 142,
-                    "endOffset": 4986
-                },
-                "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
-                    "position": {
-                        "startLine": 22,
-                        "startColumn": 4,
-                        "startOffset": 2933,
-                        "endColumn": 142,
-                        "endOffset": 3071
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 47,
-                    "startColumn": 4,
-                    "startOffset": 4991,
-                    "endColumn": 115,
-                    "endOffset": 5102
-                },
-                "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
-                    "position": {
-                        "startLine": 21,
-                        "startColumn": 4,
-                        "startOffset": 2817,
-                        "endColumn": 115,
-                        "endOffset": 2928
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 48,
-                    "startColumn": 4,
-                    "startOffset": 5107,
-                    "endColumn": 153,
-                    "endOffset": 5256
-                },
-                "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 299,
-                        "endColumn": 153,
-                        "endOffset": 448
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 49,
-                    "startColumn": 4,
-                    "startOffset": 5261,
+                    "startOffset": 4399,
                     "endColumn": 128,
-                    "endOffset": 5385
+                    "endOffset": 4523
                 },
                 "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -916,20 +802,134 @@
             },
             {
                 "to": {
-                    "startLine": 50,
+                    "startLine": 44,
                     "startColumn": 4,
-                    "startOffset": 5390,
-                    "endColumn": 152,
-                    "endOffset": 5538
+                    "startOffset": 4528,
+                    "endColumn": 147,
+                    "endOffset": 4671
                 },
                 "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
                     "position": {
-                        "startLine": 32,
+                        "startLine": 28,
                         "startColumn": 4,
-                        "startOffset": 4316,
-                        "endColumn": 152,
-                        "endOffset": 4464
+                        "startOffset": 3742,
+                        "endColumn": 147,
+                        "endOffset": 3885
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 45,
+                    "startColumn": 4,
+                    "startOffset": 4676,
+                    "endColumn": 121,
+                    "endOffset": 4793
+                },
+                "from": {
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
+                    "position": {
+                        "startLine": 27,
+                        "startColumn": 4,
+                        "startOffset": 3620,
+                        "endColumn": 121,
+                        "endOffset": 3737
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 46,
+                    "startColumn": 4,
+                    "startOffset": 4798,
+                    "endColumn": 150,
+                    "endOffset": 4944
+                },
+                "from": {
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 3469,
+                        "endColumn": 150,
+                        "endOffset": 3615
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 47,
+                    "startColumn": 4,
+                    "startOffset": 4949,
+                    "endColumn": 119,
+                    "endOffset": 5064
+                },
+                "from": {
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
+                    "position": {
+                        "startLine": 25,
+                        "startColumn": 4,
+                        "startOffset": 3349,
+                        "endColumn": 119,
+                        "endOffset": 3464
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 48,
+                    "startColumn": 4,
+                    "startOffset": 5069,
+                    "endColumn": 196,
+                    "endOffset": 5261
+                },
+                "from": {
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/res/values-ja/common_strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 170,
+                        "endColumn": 200,
+                        "endOffset": 366
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 49,
+                    "startColumn": 4,
+                    "startOffset": 5266,
+                    "endColumn": 202,
+                    "endOffset": 5464
+                },
+                "from": {
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 2747,
+                        "endColumn": 206,
+                        "endOffset": 2949
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 50,
+                    "startColumn": 4,
+                    "startOffset": 5469,
+                    "endColumn": 121,
+                    "endOffset": 5586
+                },
+                "from": {
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 2625,
+                        "endColumn": 121,
+                        "endOffset": 2742
                     }
                 }
             },
@@ -937,18 +937,18 @@
                 "to": {
                     "startLine": 51,
                     "startColumn": 4,
-                    "startOffset": 5543,
-                    "endColumn": 119,
-                    "endOffset": 5658
+                    "startOffset": 5591,
+                    "endColumn": 102,
+                    "endOffset": 5689
                 },
                 "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
                     "position": {
-                        "startLine": 31,
+                        "startLine": 22,
                         "startColumn": 4,
-                        "startOffset": 4196,
-                        "endColumn": 119,
-                        "endOffset": 4311
+                        "startOffset": 2954,
+                        "endColumn": 102,
+                        "endOffset": 3052
                     }
                 }
             },
@@ -956,18 +956,18 @@
                 "to": {
                     "startLine": 52,
                     "startColumn": 4,
-                    "startOffset": 5663,
-                    "endColumn": 134,
-                    "endOffset": 5793
+                    "startOffset": 5694,
+                    "endColumn": 163,
+                    "endOffset": 5853
                 },
                 "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
                     "position": {
-                        "startLine": 25,
+                        "startLine": 12,
                         "startColumn": 4,
-                        "startOffset": 3341,
-                        "endColumn": 134,
-                        "endOffset": 3471
+                        "startOffset": 1479,
+                        "endColumn": 167,
+                        "endOffset": 1642
                     }
                 }
             },
@@ -975,18 +975,18 @@
                 "to": {
                     "startLine": 53,
                     "startColumn": 4,
-                    "startOffset": 5798,
-                    "endColumn": 202,
-                    "endOffset": 5996
+                    "startOffset": 5858,
+                    "endColumn": 120,
+                    "endOffset": 5974
                 },
                 "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
                     "position": {
-                        "startLine": 27,
+                        "startLine": 11,
                         "startColumn": 4,
-                        "startOffset": 3599,
-                        "endColumn": 206,
-                        "endOffset": 3801
+                        "startOffset": 1358,
+                        "endColumn": 120,
+                        "endOffset": 1474
                     }
                 }
             },
@@ -994,18 +994,18 @@
                 "to": {
                     "startLine": 54,
                     "startColumn": 4,
-                    "startOffset": 6001,
-                    "endColumn": 122,
-                    "endOffset": 6119
+                    "startOffset": 5979,
+                    "endColumn": 178,
+                    "endOffset": 6153
                 },
                 "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
                     "position": {
-                        "startLine": 26,
+                        "startLine": 15,
                         "startColumn": 4,
-                        "startOffset": 3476,
-                        "endColumn": 122,
-                        "endOffset": 3594
+                        "startOffset": 1921,
+                        "endColumn": 182,
+                        "endOffset": 2099
                     }
                 }
             },
@@ -1013,18 +1013,18 @@
                 "to": {
                     "startLine": 55,
                     "startColumn": 4,
-                    "startOffset": 6124,
-                    "endColumn": 102,
-                    "endOffset": 6222
+                    "startOffset": 6158,
+                    "endColumn": 123,
+                    "endOffset": 6277
                 },
                 "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
                     "position": {
-                        "startLine": 28,
+                        "startLine": 14,
                         "startColumn": 4,
-                        "startOffset": 3806,
-                        "endColumn": 102,
-                        "endOffset": 3904
+                        "startOffset": 1797,
+                        "endColumn": 123,
+                        "endOffset": 1916
                     }
                 }
             },
@@ -1032,18 +1032,18 @@
                 "to": {
                     "startLine": 56,
                     "startColumn": 4,
-                    "startOffset": 6227,
-                    "endColumn": 163,
-                    "endOffset": 6386
+                    "startOffset": 6282,
+                    "endColumn": 149,
+                    "endOffset": 6427
                 },
                 "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
                     "position": {
-                        "startLine": 17,
+                        "startLine": 13,
                         "startColumn": 4,
-                        "startOffset": 2186,
-                        "endColumn": 167,
-                        "endOffset": 2349
+                        "startOffset": 1647,
+                        "endColumn": 149,
+                        "endOffset": 1792
                     }
                 }
             },
@@ -1051,18 +1051,18 @@
                 "to": {
                     "startLine": 57,
                     "startColumn": 4,
-                    "startOffset": 6391,
-                    "endColumn": 113,
-                    "endOffset": 6500
+                    "startOffset": 6432,
+                    "endColumn": 88,
+                    "endOffset": 6516
                 },
                 "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
                     "position": {
-                        "startLine": 15,
+                        "startLine": 23,
                         "startColumn": 4,
-                        "startOffset": 1965,
-                        "endColumn": 113,
-                        "endOffset": 2074
+                        "startOffset": 3057,
+                        "endColumn": 88,
+                        "endOffset": 3141
                     }
                 }
             },
@@ -1070,18 +1070,18 @@
                 "to": {
                     "startLine": 58,
                     "startColumn": 4,
-                    "startOffset": 6505,
-                    "endColumn": 178,
-                    "endOffset": 6679
+                    "startOffset": 6521,
+                    "endColumn": 88,
+                    "endOffset": 6605
                 },
                 "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
                     "position": {
-                        "startLine": 20,
+                        "startLine": 29,
                         "startColumn": 4,
-                        "startOffset": 2634,
-                        "endColumn": 182,
-                        "endOffset": 2812
+                        "startOffset": 3890,
+                        "endColumn": 88,
+                        "endOffset": 3974
                     }
                 }
             },
@@ -1089,18 +1089,18 @@
                 "to": {
                     "startLine": 59,
                     "startColumn": 4,
-                    "startOffset": 6684,
-                    "endColumn": 122,
-                    "endOffset": 6802
+                    "startOffset": 6610,
+                    "endColumn": 100,
+                    "endOffset": 6706
                 },
                 "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-ja/base_strings.xml",
                     "position": {
-                        "startLine": 19,
+                        "startLine": 30,
                         "startColumn": 4,
-                        "startOffset": 2511,
-                        "endColumn": 122,
-                        "endOffset": 2629
+                        "startOffset": 3979,
+                        "endColumn": 100,
+                        "endOffset": 4075
                     }
                 }
             },
@@ -1108,66 +1108,9 @@
                 "to": {
                     "startLine": 60,
                     "startColumn": 4,
-                    "startOffset": 6807,
-                    "endColumn": 83,
-                    "endOffset": 6886
-                },
-                "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ja/common_strings.xml",
-                    "position": {
-                        "startLine": 29,
-                        "startColumn": 4,
-                        "startOffset": 3909,
-                        "endColumn": 83,
-                        "endOffset": 3988
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 61,
-                    "startColumn": 4,
-                    "startOffset": 6891,
-                    "endColumn": 88,
-                    "endOffset": 6975
-                },
-                "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.3.0/res/values-ja/base_strings.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 170,
-                        "endColumn": 88,
-                        "endOffset": 254
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 62,
-                    "startColumn": 4,
-                    "startOffset": 6980,
-                    "endColumn": 100,
-                    "endOffset": 7076
-                },
-                "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.3.0/res/values-ja/base_strings.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 259,
-                        "endColumn": 100,
-                        "endOffset": 355
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 63,
-                    "startColumn": 4,
-                    "startOffset": 7081,
+                    "startOffset": 6711,
                     "endColumn": 57,
-                    "endOffset": 7134
+                    "endOffset": 6764
                 },
                 "from": {
                     "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.6.0/res/values-ja/values-ja.xml",
@@ -1177,6 +1120,44 @@
                         "startOffset": 1527,
                         "endColumn": 57,
                         "endOffset": 1580
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 61,
+                    "startColumn": 4,
+                    "startOffset": 6769,
+                    "endColumn": 96,
+                    "endOffset": 6861
+                },
+                "from": {
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/values-ja/location_strings.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 322,
+                        "endColumn": 96,
+                        "endOffset": 414
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 62,
+                    "startColumn": 4,
+                    "startOffset": 6866,
+                    "endColumn": 91,
+                    "endOffset": 6953
+                },
+                "from": {
+                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/values-ja/location_strings.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 230,
+                        "endColumn": 91,
+                        "endOffset": 317
                     }
                 }
             }

@@ -28,7 +28,8 @@ import com.parse.Parse;
 import com.parse.ParseObject;
 import com.google.android.gms.*;
 
-public class MainActivity extends AppCompatActivity implements HomePageFragment.OnFragmentInteractionListener, Mapfragment.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements HomePageFragment.OnFragmentInteractionListener, Mapfragment.OnFragmentInteractionListener,
+AddLocationFragment.OnFragmentInteractionListener, LocationSearchFragment.OnFragmentInteractionListener{
 
     Fragment fragment;
 

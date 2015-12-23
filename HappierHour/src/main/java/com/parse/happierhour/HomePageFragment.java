@@ -1,6 +1,8 @@
 package com.parse.happierhour;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -9,6 +11,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.places.AutocompleteFilter;
+import com.google.android.gms.location.places.GeoDataApi;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlacePicker.IntentBuilder;
+import com.google.android.gms.location.places.ui.*;
 
 
 /**
@@ -20,9 +31,13 @@ import android.widget.Button;
  * create an instance of this fragment.
  */
 public class HomePageFragment extends Fragment {
-
+    private static final String TAG = "HomePage";
     MainActivity main;
     Button mapButton;
+    Button addLocation;
+    Button searchLocation;
+    int PLACE_AUTOCOMPLETE_REQUEST_CODE = 1;
+    Context con;
 
     private OnFragmentInteractionListener mListener;
 
@@ -59,6 +74,8 @@ public class HomePageFragment extends Fragment {
         View view = inflater.inflate(
                 R.layout.fragment_home_page, container, false);
         main = (MainActivity)getActivity();
+
+        //Map Button
         mapButton = (Button) view.findViewById(R.id.map_button);
         mapButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +85,26 @@ public class HomePageFragment extends Fragment {
             }
         });
 
+        //Add Button
+        addLocation = (Button) view.findViewById(R.id.location_add);
+        addLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findPlace(v);
+            }
+        });
+
+        //Search Button
+        searchLocation = (Button)view.findViewById(R.id.location_search);
+        searchLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("Home Fragment", "Clicky Clicky");
+                main.swapFragment(new LocationSearchFragment());
+            }
+        });
+
+        con = getActivity();
         return view;
     }
 
@@ -93,6 +130,47 @@ public class HomePageFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+    //Start Google Places search
+    public void findPlace(View view) {
+        try {
+            AutocompleteFilter typeFilter = new AutocompleteFilter.Builder()
+                    .setTypeFilter(AutocompleteFilter.TYPE_FILTER_ESTABLISHMENT)
+                    .build();
+            //Might try .setTypeFilter(Place.TYPE_BAR);
+            Intent intent =
+                    new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_FULLSCREEN)
+                            .setFilter(typeFilter)
+                            .build(getActivity());
+            startActivityForResult(intent, PLACE_AUTOCOMPLETE_REQUEST_CODE);
+        } catch (GooglePlayServicesRepairableException e) {
+            // TODO: Handle the error.
+        } catch (GooglePlayServicesNotAvailableException e) {
+            // TODO: Handle the error.
+        }
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == PLACE_AUTOCOMPLETE_REQUEST_CODE) {
+            if (resultCode == Activity.RESULT_OK) {
+                Place place = PlaceAutocomplete.getPlace(con, data);
+                Log.i(TAG, "Place: " + place.getName());
+                Log.i(TAG, "LatLng: " + place.getLatLng());
+                Log.i(TAG, "Address: " + place.getAddress());
+                Log.i(TAG, "Phone Number: " + place.getPhoneNumber());
+
+
+                main.swapFragment(new AddLocationFragment());
+            } else if (resultCode == PlaceAutocomplete.RESULT_ERROR) {
+                Status status = PlaceAutocomplete.getStatus(con, data);
+                // TODO: Handle the error.
+                Log.i(TAG, status.getStatusMessage());
+
+            } else if (resultCode == Activity.RESULT_CANCELED) {
+                // The user canceled the operation.
+            }
+        }
     }
 
     /**
