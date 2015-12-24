@@ -1,31 +1,31 @@
 [
     {
-        "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout/place_autocomplete_item_powered_by_google.xml",
-        "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/layout/place_autocomplete_item_powered_by_google.xml"
-    },
-    {
         "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
         "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/layout/abc_action_menu_item_layout.xml"
     },
     {
-        "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout/design_navigation_menu.xml",
-        "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/design/22.2.1/res/layout/design_navigation_menu.xml"
+        "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout/place_autocomplete_item_powered_by_google.xml",
+        "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/layout/place_autocomplete_item_powered_by_google.xml"
     },
     {
         "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
         "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/layout/abc_screen_content_include.xml"
     },
     {
+        "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout/design_navigation_menu.xml",
+        "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/design/22.2.1/res/layout/design_navigation_menu.xml"
+    },
+    {
         "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout/com_facebook_login_fragment.xml",
         "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.6.0/res/layout/com_facebook_login_fragment.xml"
     },
     {
-        "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
-        "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/layout/abc_screen_simple.xml"
-    },
-    {
         "merged": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
         "source": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/layout/abc_screen_content_include.xml"
+    },
+    {
+        "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
+        "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/layout/abc_screen_simple.xml"
     },
     {
         "merged": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout/abc_select_dialog_material.xml",
@@ -56,12 +56,12 @@
         "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/layout/abc_select_dialog_material.xml"
     },
     {
-        "merged": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout/layout_snackbar.xml",
-        "source": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/design/22.2.1/res/layout/layout_snackbar.xml"
-    },
-    {
         "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout/messenger_button_send_white_round.xml",
         "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.6.0/res/layout/messenger_button_send_white_round.xml"
+    },
+    {
+        "merged": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout/layout_snackbar.xml",
+        "source": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/design/22.2.1/res/layout/layout_snackbar.xml"
     },
     {
         "merged": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout/place_autocomplete_fragment.xml",
@@ -72,12 +72,12 @@
         "source": "/Users/jianganson72/Desktop/happier_hour/HappierHour/src/main/res/layout/fragment_add_location.xml"
     },
     {
-        "merged": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout/notification_template_big_media.xml",
-        "source": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/layout/notification_template_big_media.xml"
-    },
-    {
         "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml",
         "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/layout/abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout/notification_template_big_media.xml",
+        "source": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/layout/notification_template_big_media.xml"
     },
     {
         "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
@@ -104,12 +104,12 @@
         "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/layout/notification_template_big_media.xml"
     },
     {
-        "merged": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout/messenger_button_send_blue_small.xml",
-        "source": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.6.0/res/layout/messenger_button_send_blue_small.xml"
-    },
-    {
         "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout/layout_tab_text.xml",
         "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/design/22.2.1/res/layout/layout_tab_text.xml"
+    },
+    {
+        "merged": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout/messenger_button_send_blue_small.xml",
+        "source": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.6.0/res/layout/messenger_button_send_blue_small.xml"
     },
     {
         "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout/notification_media_action.xml",
