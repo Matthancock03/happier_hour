@@ -13,12 +13,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.location.places.Place;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseGeoPoint;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -29,9 +39,11 @@ import com.google.android.gms.maps.model.MarkerOptions;
  * Use the {@link Mapfragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Mapfragment extends Fragment implements OnMapReadyCallback {
+public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
+    private static final String TAG = "MapFragment";
 
     GoogleMap map;
+    ArrayList<ParseObject> bars = new ArrayList<>();
     Location location;
     LatLng myLocation;
     MainActivity main;
@@ -53,6 +65,23 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
+        }
+        if(bars.size() == 0){
+
+            ParseGeoPoint userLocation = new ParseGeoPoint();
+            ParseQuery<ParseObject> query = ParseQuery.getQuery("Locations");
+            query.whereNear("coordinates", userLocation);
+            query.setLimit(25);
+            query.findInBackground(new FindCallback<ParseObject>() {
+                @Override
+                public void done(List<ParseObject> objects, ParseException e) {
+                    if(e != null){
+                        Log.d("Map ParseException ", e.toString());
+                    }else if(objects.size() > 0) {
+                        bars = (ArrayList) objects;
+                    }
+                }
+            });
         }
     }
 
@@ -129,23 +158,69 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback {
             Log.d("Map Fragment", "onMapReady");
             map = googleMap;
             centerMapOnMyLocation();
-            map.addMarker(new MarkerOptions()
-                    .position(new LatLng(37.7750, -122.4183))
-                    .title("San Francisco"));
+            setMapMarkers();
+            map.setOnInfoWindowClickListener(this);
+        }
+    }
+
+    public void setMapMarkers(){
+        for(ParseObject bar : bars) {
+            Marker marker = map.addMarker(new MarkerOptions()
+                    .position(new LatLng(bar.getDouble("Lat"), bar.getDouble("Long")))
+                    .title(bar.getString("Name"))
+                    .snippet("Rating: " + bar.getDouble("Rating")));
+
         }
     }
 
     private void centerMapOnMyLocation() {
 
-        map.setMyLocationEnabled(true);
-        location = map.getMyLocation();
-        myLocation = new LatLng(37.7750, -122.4183);
-        if (myLocation != null) {
-            //myLocation = new LatLng(location.getLatitude(),location.getLongitude());
-            map.animateCamera(CameraUpdateFactory.newLatLngZoom(myLocation,
-                    11));
+            try {
+
+                map.setMyLocationEnabled(true);
+                location = map.getMyLocation();
+
+                if(bars.size() > 0) {
+                    myLocation = new LatLng(bars.get(0).getDouble("Lat"), bars.get(0).getDouble("Long"));
+                }else{
+                    myLocation = new LatLng(37.243599, -121.949057);
+                }
+                if (myLocation != null) {
+                    //myLocation = new LatLng(location.getLatitude(),location.getLongitude());
+                    map.animateCamera(CameraUpdateFactory.newLatLngZoom(myLocation,
+                            11));
+                }
+            } catch (SecurityException e) {
+
+            } catch (Exception e) {
+                Log.d(TAG, e.toString());
+            }
+
+
+    }
+
+    private void centerMapOnLocation(Place place) {
+
+        try {
+            map.setMyLocationEnabled(true);
+            location = map.getMyLocation();
+            myLocation = place.getLatLng();
+            if (myLocation != null) {
+                //myLocation = new LatLng(location.getLatitude(),location.getLongitude());
+                map.animateCamera(CameraUpdateFactory.newLatLngZoom(myLocation,
+                        11));
+            }
+        }catch(SecurityException e){
+
+        }catch(Exception e){
+            Log.d(TAG, e.toString());
         }
 
+    }
+
+    @Override
+    public void onInfoWindowClick(Marker marker) {
+        Log.d(TAG, "Info Window Click");
     }
 
     /**
@@ -168,5 +243,10 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback {
         super.onResume();
         Log.d("Map Fragment", "On Resume");
     }
-
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.d("Map Fragment", "On Destroy");
+        bars.clear();
+    }
 }

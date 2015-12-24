@@ -18,6 +18,7 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.AutocompleteFilter;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocomplete;
+import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
 
 
@@ -31,7 +32,7 @@ import com.parse.ParseObject;
  */
 public class AddLocationFragment extends Fragment {
 
-    private static final String TAG = "HomePage";
+    private static final String TAG = "AddLocation";
     MainActivity main;
     int PLACE_AUTOCOMPLETE_REQUEST_CODE = 1;
     Place place;
@@ -68,16 +69,19 @@ public class AddLocationFragment extends Fragment {
         View view = inflater.inflate(
                 R.layout.fragment_add_location, container, false);
         main = (MainActivity)getActivity();
-        saveButton = (Button)view.findViewById(R.id.save_location);
+
+        saveButton = (Button)view.findViewById(R.id.add_location_button);
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 saveLocation();
             }
         });
+
+        con = getActivity();
         // Inflate the layout for this fragment
         findPlace(view);
-        return inflater.inflate(R.layout.fragment_add_location, container, false);
+        return view;
 
     }
 
@@ -126,15 +130,27 @@ public class AddLocationFragment extends Fragment {
 
     public void saveLocation(){
 
+        Mapfragment map = new Mapfragment();
+        Log.i(TAG, "Save Location ");
+
         if(place != null) {
+            ParseGeoPoint point = new ParseGeoPoint();
+            point.setLatitude(place.getLatLng().latitude);
+            point.setLongitude(place.getLatLng().longitude);
+
             ParseObject bar = new ParseObject("Locations");
+            bar.put("Id", place.getId());
             bar.put("Name", place.getName());
-            bar.put("LatLng", place.getLatLng());
+            bar.put("Lat", place.getLatLng().latitude);
+            bar.put("Long", place.getLatLng().longitude);
             bar.put("Address", place.getAddress());
             bar.put("PhoneNumber", place.getPhoneNumber());
+            bar.put("Rating", place.getRating());
+            bar.put("coordinates", point);
             bar.saveInBackground();
+            map.bars.add(bar);
         }
-        main.swapFragment(new HomePageFragment()); //Go Back to Home Page
+        main.swapFragment(map); //Go Back to Home Page
     }
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -142,9 +158,11 @@ public class AddLocationFragment extends Fragment {
             if (resultCode == Activity.RESULT_OK) {
                 place = PlaceAutocomplete.getPlace(con, data);
                 Log.i(TAG, "Name: " + place.getName());
+                Log.i(TAG, "Id: " + place.getId());
                 Log.i(TAG, "LatLng: " + place.getLatLng());
                 Log.i(TAG, "Address: " + place.getAddress());
                 Log.i(TAG, "Phone Number: " + place.getPhoneNumber());
+                Log.i(TAG, "Rating: " + place.getRating());
 
             } else if (resultCode == PlaceAutocomplete.RESULT_ERROR) {
                 Status status = PlaceAutocomplete.getStatus(con, data);

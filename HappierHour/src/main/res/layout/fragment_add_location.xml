@@ -123,7 +123,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Add Location"
-        android:id="@+id/save_location"
+        android:id="@+id/add_location_button"
         android:layout_marginTop="28dp"
         android:layout_below="@+id/country_Field"
         android:layout_gravity="center"
