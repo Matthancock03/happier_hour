@@ -1,13 +1,162 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="layout.display_location">
+    tools:context=".DisplayLocationFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Name:"
+        android:id="@+id/name"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/Display_Location_Header"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal|top"
+        android:id="@+id/Display_Location_Header"
+        android:textSize="42dp"
+        android:textStyle="bold|italic"
+        android:textColor="#dc3333"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Address:"
+        android:id="@+id/address"
+        android:layout_below="@+id/name"
+        android:layout_alignStart="@+id/name"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Phone Number:"
+        android:id="@+id/phonenumber"
+        android:layout_below="@+id/address"
+        android:layout_alignStart="@+id/address"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Rating:"
+        android:id="@+id/rating"
+        android:layout_below="@+id/phonenumber"
+        android:layout_alignStart="@+id/phonenumber"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Images:"
+        android:id="@+id/images"
+        android:layout_below="@+id/rating"
+        android:layout_alignStart="@+id/rating"
+        android:layout_marginTop="10dp" />
+
+    <Gallery
+        android:layout_width="fill_parent"
+        android:layout_height="125dp"
+        android:id="@+id/ImagesHorizontalView"
+        android:layout_below="@+id/images"
+        android:layout_alignParentStart="true"
+        android:fillViewport="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/nameField"
+        android:layout_above="@+id/address"
+        android:layout_alignEnd="@+id/Display_Location_Header"
+        android:layout_toEndOf="@+id/phonenumber"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/addressField"
+        android:layout_above="@+id/phonenumber"
+        android:layout_alignEnd="@+id/nameField"
+        android:layout_alignStart="@+id/nameField" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/phonenumberField"
+        android:layout_alignBottom="@+id/phonenumber"
+        android:layout_alignEnd="@+id/addressField"
+        android:layout_toEndOf="@+id/phonenumber"
+        android:layout_alignStart="@+id/addressField" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/ratingField"
+        android:layout_above="@+id/images"
+        android:layout_alignEnd="@+id/phonenumberField"
+        android:layout_toEndOf="@+id/phonenumber"
+        android:layout_alignStart="@+id/phonenumberField" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Reviews:"
+        android:id="@+id/reviews"
+        android:layout_below="@+id/ImagesHorizontalView"
+        android:layout_alignStart="@+id/images" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ReviewListView"
+        android:layout_below="@+id/reviews"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/addimage" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Image"
+        android:id="@+id/addimage"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="#dc3333"
+        android:textColor="#FFFFFF"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Review"
+        android:id="@+id/addreview"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:background="#dc3333"
+        android:textColor="#FFFFFF"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+
+</RelativeLayout>
