@@ -47,6 +47,7 @@ dependencies {
     compile 'com.google.guava:guava:16.0.1'
     compile "com.google.android.gms:play-services-maps:$PLAY_SERVICES_VERSION"
     compile "com.google.android.gms:play-services-location:$PLAY_SERVICES_VERSION"
+    compile files('libs/Android-SimpleLocation.jar')
 
 }
 

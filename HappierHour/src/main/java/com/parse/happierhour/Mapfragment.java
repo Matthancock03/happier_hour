@@ -30,6 +30,8 @@ import com.parse.ParseQuery;
 import java.util.ArrayList;
 import java.util.List;
 
+import im.delight.android.location.SimpleLocation;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -41,12 +43,13 @@ import java.util.List;
  */
 public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
     private static final String TAG = "MapFragment";
-
+    private SimpleLocation position;
     GoogleMap map;
     ArrayList<ParseObject> bars = new ArrayList<>();
     Location location;
     LatLng myLocation;
     MainActivity main;
+    Mapfragment con;
     private OnFragmentInteractionListener mListener;
 
     // TODO: Rename and change types and number of parameters
@@ -64,25 +67,11 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        con = this;
+        Log.i(TAG, "On Create");
         if (getArguments() != null) {
         }
-        if(bars.size() == 0){
-
-            ParseGeoPoint userLocation = new ParseGeoPoint();
-            ParseQuery<ParseObject> query = ParseQuery.getQuery("Locations");
-            query.whereNear("coordinates", userLocation);
-            query.setLimit(25);
-            query.findInBackground(new FindCallback<ParseObject>() {
-                @Override
-                public void done(List<ParseObject> objects, ParseException e) {
-                    if(e != null){
-                        Log.d("Map ParseException ", e.toString());
-                    }else if(objects.size() > 0) {
-                        bars = (ArrayList) objects;
-                    }
-                }
-            });
-        }
+        position = new SimpleLocation(getActivity());
     }
 
     @Override
@@ -93,9 +82,32 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
                 R.layout.fragment_mapfragment, container, false);
         main = (MainActivity)getActivity();
 
+        Log.i(TAG, "On CreateView");
+        if(bars.size() == 0){
 
-        MapFragment mapFragment = (MapFragment) getActivity().getFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+            Log.i(TAG, "Bars Empty");
+            ParseGeoPoint userLocation = new ParseGeoPoint();
+            ParseQuery<ParseObject> query = ParseQuery.getQuery("Locations");
+            query.whereNear("coordinates", userLocation);
+            query.setLimit(25);
+            query.findInBackground(new FindCallback<ParseObject>() {
+                @Override
+                public void done(List<ParseObject> objects, ParseException e) {
+                    if(e != null){
+                        Log.d("Map ParseException ", e.toString());
+                    }else if(objects.size() > 0) {
+                        Log.i(TAG, "Bars Returned" + objects.size());
+                        bars = (ArrayList) objects;
+                        MapFragment mapFragment = (MapFragment) getActivity().getFragmentManager().findFragmentById(R.id.map);
+                        mapFragment.getMapAsync(con);
+                    }else{
+                        Log.i(TAG, "No Bars Returned");
+                        MapFragment mapFragment = (MapFragment) getActivity().getFragmentManager().findFragmentById(R.id.map);
+                        mapFragment.getMapAsync(con);
+                    }
+                }
+            });
+        }
 
         return view;
     }
@@ -112,8 +124,8 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
         // Define a listener that responds to location updates
         LocationListener locationListener = new LocationListener() {
             public void onLocationChanged(Location location) {
-                // Called when a new location is found by the network location provider.
-               //makeUseOfNewLocation(location);
+                Log.i(TAG, "Location Changed in Map Fragment");
+                con.location = location;
             }
 
             public void onStatusChanged(String provider, int status, Bundle extras) {}
@@ -135,6 +147,8 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
 
     @Override
     public void onAttach(Activity activity) {
+        Log.i(TAG, "On Attach");
+
         super.onAttach(activity);
         try {
             mListener = (OnFragmentInteractionListener) activity;
@@ -164,6 +178,8 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
     }
 
     public void setMapMarkers(){
+        Log.i(TAG, "Map Markers");
+        Log.i(TAG, "Bars Size: " + bars.size());
         for(ParseObject bar : bars) {
             Marker marker = map.addMarker(new MarkerOptions()
                     .position(new LatLng(bar.getDouble("Lat"), bar.getDouble("Long")))
@@ -208,7 +224,7 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
             if (myLocation != null) {
                 //myLocation = new LatLng(location.getLatitude(),location.getLongitude());
                 map.animateCamera(CameraUpdateFactory.newLatLngZoom(myLocation,
-                        11));
+                        13));
             }
         }catch(SecurityException e){
 
@@ -241,12 +257,12 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
     @Override
     public void onResume() {
         super.onResume();
-        Log.d("Map Fragment", "On Resume");
+        Log.d(TAG, "On Resume");
     }
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Log.d("Map Fragment", "On Destroy");
+        Log.d(TAG, "On Destroy");
         bars.clear();
     }
 }

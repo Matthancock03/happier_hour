@@ -18,6 +18,7 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.AutocompleteFilter;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocomplete;
+import com.parse.ParseACL;
 import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
 
@@ -138,7 +139,11 @@ public class AddLocationFragment extends Fragment {
             point.setLatitude(place.getLatLng().latitude);
             point.setLongitude(place.getLatLng().longitude);
 
+            ParseACL acl = new ParseACL();
+            acl.setPublicReadAccess(true);
+
             ParseObject bar = new ParseObject("Locations");
+
             bar.put("Id", place.getId());
             bar.put("Name", place.getName());
             bar.put("Lat", place.getLatLng().latitude);
@@ -147,6 +152,7 @@ public class AddLocationFragment extends Fragment {
             bar.put("PhoneNumber", place.getPhoneNumber());
             bar.put("Rating", place.getRating());
             bar.put("coordinates", point);
+            bar.setACL(acl);
             bar.saveInBackground();
             map.bars.add(bar);
         }
