@@ -39,19 +39,9 @@ AddLocationFragment.OnFragmentInteractionListener, LocationSearchFragment.OnFrag
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_main);
 
-      /*
-       *  Parse Tester
-       */
       ParseAnalytics.trackAppOpenedInBackground(getIntent());
 
-      ParseObject testObject = new ParseObject("TestObject");
-      testObject.put("foo", "bar");
-      testObject.saveInBackground();
-      // End Parse
 
-      /*
-       ** Google Map Test
-       */
       if (findViewById(R.id.fragment_container) != null) {
 
           // However, if we're being restored from a previous state,
@@ -71,7 +61,7 @@ AddLocationFragment.OnFragmentInteractionListener, LocationSearchFragment.OnFrag
           FragmentTransaction transaction = getFragmentManager().beginTransaction();
 
           transaction.replace(R.id.fragment_container, fragment);
-          transaction.addToBackStack(null);
+          transaction.addToBackStack(fragment.toString());
           transaction.commit();
       }
   }

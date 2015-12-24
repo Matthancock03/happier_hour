@@ -216,8 +216,8 @@ com/google/android/gms/maps/StreetViewPanoramaView.class
 com/facebook/internal/FacebookDialogFragment.class
 com/google/android/gms/common/api/Scope.class
 android/support/design/widget/SwipeDismissBehavior.class
-com/squareup/picasso/Downloader$Response.class
 bolts/AggregateException.class
+com/squareup/picasso/Downloader$Response.class
 android/support/v4/media/session/MediaSessionCompat$Callback.class
 android/support/design/widget/TabLayout$SlidingTabStrip.class
 android/support/design/widget/Snackbar$3.class
@@ -344,8 +344,8 @@ bolts/Task.class
 com/google/common/collect/ImmutableSortedMapFauxverideShim.class
 android/support/design/widget/ValueAnimatorCompat.class
 android/support/v4/media/RatingCompat$1.class
-com/google/gson/reflect/TypeToken.class
 com/google/common/collect/ImmutableTable.class
+com/google/gson/reflect/TypeToken.class
 android/support/v7/internal/widget/AdapterViewCompat.class
 com/google/common/collect/GeneralRange.class
 com/google/gson/annotations/SerializedName.class
@@ -477,8 +477,8 @@ com/facebook/CallbackManager$Factory.class
 com/google/common/reflect/TypeToken$TypeCollector.class
 com/google/common/primitives/Doubles.class
 com/google/android/gms/common/api/OptionalPendingResult.class
-com/parse/ParseQuery.class
 com/google/common/collect/LinkedHashMultimap$ValueEntry.class
+com/parse/ParseQuery.class
 com/google/common/cache/CacheBuilderSpec.class
 com/google/android/gms/location/LocationStatusCodes.class
 android/support/design/widget/CoordinatorLayout$ViewElevationComparator.class
