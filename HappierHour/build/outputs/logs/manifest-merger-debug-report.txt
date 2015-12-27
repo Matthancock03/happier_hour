@@ -53,14 +53,6 @@ MERGED from [com.google.android.gms:play-services-maps:8.4.0] /Users/Misanthropi
 		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:25:9-32
 application
 ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:27:5-71:19
-MERGED from [com.android.support:appcompat-v7:22.2.1] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.0.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:design:22.2.1] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/design/22.2.1/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:22.2.1] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.0.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.0.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:22:5-20
-MERGED from [com.facebook.android:facebook-android-sdk:4.6.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.6.0/AndroidManifest.xml:28:5-20
-MERGED from [com.android.support:support-v4:23.0.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-auth:8.4.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/8.4.0/AndroidManifest.xml:20:5-32:19
 MERGED from [com.google.android.gms:play-services-basement:8.4.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:20:5-24:19
 MERGED from [com.android.support:support-v4:23.0.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:22:5-20
@@ -72,6 +64,15 @@ MERGED from [com.google.android.gms:play-services-basement:8.4.0] /Users/Misanth
 MERGED from [com.android.support:support-v4:23.0.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-maps:8.4.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/8.4.0/AndroidManifest.xml:27:5-20
 MERGED from [com.google.android.gms:play-services-basement:8.4.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:23.0.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:22.2.1] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.0.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:22.2.1] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/design/22.2.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:22.2.1] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.0.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.0.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.facebook.android:facebook-android-sdk:4.6.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.6.0/AndroidManifest.xml:28:5-20
+MERGED from [com.android.support:support-v4:23.0.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.0.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml:31:9-41
@@ -164,14 +165,6 @@ ADDED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/A
 uses-sdk
 INJECTED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:multidex:1.0.1] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/multidex/1.0.1/AndroidManifest.xml:18:5-42
-MERGED from [com.android.support:appcompat-v7:22.2.1] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.0.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:design:22.2.1] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/design/22.2.1/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:appcompat-v7:22.2.1] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.0.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.0.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:20:5-43
-MERGED from [com.facebook.android:facebook-android-sdk:4.6.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.6.0/AndroidManifest.xml:24:5-26:41
-MERGED from [com.android.support:support-v4:23.0.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:20:5-43
 MERGED from [com.google.android.gms:play-services-auth:8.4.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/8.4.0/AndroidManifest.xml:18:5-43
 MERGED from [com.google.android.gms:play-services-base:8.4.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/AndroidManifest.xml:18:5-42
 MERGED from [com.google.android.gms:play-services-basement:8.4.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:18:5-42
@@ -187,6 +180,15 @@ MERGED from [com.android.support:support-v4:23.0.0] /Users/Misanthropic/repos/An
 MERGED from [com.google.android.gms:play-services-maps:8.4.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/8.4.0/AndroidManifest.xml:26:5-42
 MERGED from [com.google.android.gms:play-services-base:8.4.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/AndroidManifest.xml:18:5-42
 MERGED from [com.google.android.gms:play-services-basement:8.4.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:23.0.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:22.2.1] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.0.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:design:22.2.1] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/design/22.2.1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:22.2.1] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.0.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.0.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.android:facebook-android-sdk:4.6.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.6.0/AndroidManifest.xml:24:5-26:41
+MERGED from [com.android.support:support-v4:23.0.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:23.0.0] /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
 		INJECTED from /Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/AndroidManifest.xml
