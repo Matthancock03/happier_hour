@@ -256,7 +256,7 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
 
         DisplayLocationFragment display = new DisplayLocationFragment();
         display.bar = bars.get(barIndex);
-        main.swapFragment(display);
+        main.swapFragment(display, false);
     }
 
     /**

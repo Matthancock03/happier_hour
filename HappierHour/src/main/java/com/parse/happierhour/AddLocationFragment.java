@@ -181,7 +181,7 @@ public class AddLocationFragment extends Fragment {
             bar.saveInBackground();
             //map.bars.add(bar);
         }
-        main.swapFragment(map); //Go Back to Home Page
+        main.swapFragment(map, false); //Go Back to Home Page
     }
 
 

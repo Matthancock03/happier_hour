@@ -15,6 +15,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import com.facebook.FacebookSdk;
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements HomePageFragment.
 AddLocationFragment.OnFragmentInteractionListener, LocationSearchFragment.OnFragmentInteractionListener, DisplayLocationFragment.OnFragmentInteractionListener{
 
     Fragment fragment;
+    FragmentTransaction transaction;
+    private static final String TAG = "Main Activity";
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -58,10 +61,10 @@ AddLocationFragment.OnFragmentInteractionListener, LocationSearchFragment.OnFrag
           // Intent, pass the Intent's extras to the fragment as arguments
           fragment.setArguments(getIntent().getExtras());
 
-          FragmentTransaction transaction = getFragmentManager().beginTransaction();
+          transaction = getFragmentManager().beginTransaction();
 
           transaction.replace(R.id.fragment_container, fragment);
-          transaction.addToBackStack(fragment.toString());
+          transaction.addToBackStack(null);
           transaction.commit();
       }
   }
@@ -73,12 +76,13 @@ AddLocationFragment.OnFragmentInteractionListener, LocationSearchFragment.OnFrag
     return true;
   }
 
-    public void swapFragment(Fragment frag){
+    public void swapFragment(Fragment frag, boolean keep){
 
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-
+        transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, frag);
-        transaction.addToBackStack(null);
+        if(keep) {
+            transaction.addToBackStack(null);
+        }
         transaction.commit();
     }
 
@@ -99,6 +103,16 @@ AddLocationFragment.OnFragmentInteractionListener, LocationSearchFragment.OnFrag
 
     public void onFragmentInteraction(Uri uri){
         //you can leave it empty
+    }
+
+    @Override
+    public void onBackPressed() {
+        Log.i(TAG, "On Back Pressed");
+        if (getFragmentManager().getBackStackEntryCount() > 1 ){
+            getFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
+        }
     }
 
 }

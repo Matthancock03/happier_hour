@@ -2570,7 +2570,7 @@ containing a value of this type.
         public static final int location_name=0x7f0c008d;
         public static final int location_phone=0x7f0c0091;
         public static final int location_search=0x7f0c00b7;
-        public static final int login_button=0x7f0c0087;
+        public static final int login_button=0x7f0c0088;
         public static final int login_header=0x7f0c008a;
         public static final int map=0x7f0c00b9;
         public static final int map_button=0x7f0c00b6;
@@ -2631,7 +2631,7 @@ containing a value of this type.
         public static final int showCustom=0x7f0c0010;
         public static final int showHome=0x7f0c0011;
         public static final int showTitle=0x7f0c0012;
-        public static final int sign_in_button=0x7f0c0088;
+        public static final int sign_in_button=0x7f0c0089;
         public static final int small=0x7f0c004f;
         public static final int snackbar_action=0x7f0c00bb;
         public static final int snackbar_text=0x7f0c00ba;
@@ -2645,7 +2645,7 @@ containing a value of this type.
         public static final int startField=0x7f0c00ac;
         public static final int start_time=0x7f0c0095;
         public static final int start_time_header=0x7f0c0094;
-        public static final int status=0x7f0c0089;
+        public static final int status=0x7f0c0087;
         public static final int status_bar_latest_event_content=0x7f0c00bf;
         public static final int submit_area=0x7f0c0078;
         public static final int sunday=0x7f0c009f;

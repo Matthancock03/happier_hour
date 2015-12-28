@@ -82,17 +82,16 @@ public class HomePageFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.d("Home Fragment", "Clicky Clicky");
-                main.swapFragment(new Mapfragment());
+                main.swapFragment(new Mapfragment(), true);
             }
         });
-
         //Add Button
         addLocation = (Button) view.findViewById(R.id.location_add);
         addLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("Home Fragment", "Clicky Clicky");
-                main.swapFragment(new AddLocationFragment());
+                main.swapFragment(new AddLocationFragment(), true);
             }
         });
 
@@ -102,7 +101,7 @@ public class HomePageFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.d("Home Fragment", "Clicky Clicky");
-                main.swapFragment(new LocationSearchFragment());
+                main.swapFragment(new LocationSearchFragment(), true);
             }
         });
 

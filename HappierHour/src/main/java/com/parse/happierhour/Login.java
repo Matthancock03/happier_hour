@@ -271,7 +271,7 @@ public class Login extends AppCompatActivity implements
             startActivity(intent);
             finish();
         } else {
-            mStatusTextView.setText("Not Logged In");
+            //mStatusTextView.setText("Not Logged In");
 
             findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
         }

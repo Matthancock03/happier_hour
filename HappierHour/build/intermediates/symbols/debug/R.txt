@@ -788,7 +788,7 @@ int id location_address 0x7f0c008f
 int id location_name 0x7f0c008d
 int id location_phone 0x7f0c0091
 int id location_search 0x7f0c00b7
-int id login_button 0x7f0c0087
+int id login_button 0x7f0c0088
 int id login_header 0x7f0c008a
 int id map 0x7f0c00b9
 int id map_button 0x7f0c00b6
@@ -849,7 +849,7 @@ int id shortcut 0x7f0c0066
 int id showCustom 0x7f0c0010
 int id showHome 0x7f0c0011
 int id showTitle 0x7f0c0012
-int id sign_in_button 0x7f0c0088
+int id sign_in_button 0x7f0c0089
 int id small 0x7f0c004f
 int id snackbar_action 0x7f0c00bb
 int id snackbar_text 0x7f0c00ba
@@ -863,7 +863,7 @@ int id start 0x7f0c0026
 int id startField 0x7f0c00ac
 int id start_time 0x7f0c0095
 int id start_time_header 0x7f0c0094
-int id status 0x7f0c0089
+int id status 0x7f0c0087
 int id status_bar_latest_event_content 0x7f0c00bf
 int id submit_area 0x7f0c0078
 int id sunday 0x7f0c009f

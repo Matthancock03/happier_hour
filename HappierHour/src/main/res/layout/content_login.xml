@@ -10,22 +10,25 @@
     tools:showIn="@layout/activity_login" tools:context="com.parse.happierhour.Login"
     android:background="@mipmap/cocktail">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_above="@+id/status"
+        android:layout_alignParentStart="true"
+        android:gravity="center"
+        android:layout_marginLeft="75dp"
+        android:layout_marginRight="75dp">
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="99dp" />
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/login_button"
-        android:layout_centerHorizontal="true" />
-
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
