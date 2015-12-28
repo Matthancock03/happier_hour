@@ -41,7 +41,7 @@ dependencies {
     compile "com.google.android.gms:play-services-auth:$PLAY_SERVICES_VERSION"
     compile "com.google.android.gms:play-services-maps:$PLAY_SERVICES_VERSION"
     compile "com.google.android.gms:play-services-location:$PLAY_SERVICES_VERSION"
-
+    compile 'com.vstechlab.easyfonts:easyfonts:1.0.0'
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'com.android.support:design:22.2.1'
     compile 'com.facebook.android:facebook-android-sdk:4.6.0'

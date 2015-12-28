@@ -8,55 +8,60 @@
         android:gravity="center"
         android:layout_gravity="center_horizontal"
         android:id="@+id/home_header"
-        android:textSize="42dp"
+        android:textSize="52dp"
         android:textStyle="bold|italic"
-        android:textColor="#dc3333"
+        android:textColor="#7B1900"
         android:layout_marginTop="24dp" />
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="176dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp">
 
         <Button
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Map"
+            android:layout_height="75dp"
+            android:text="What&apos;s Nearby"
             android:id="@+id/map_button"
             android:layout_gravity="center"
-            android:background="#dc3333"
+            android:background="@drawable/round_shape_btn"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:layout_marginBottom="2dp" />
+            android:layout_marginBottom="20dp"
+            android:textSize="22dp" />
 
         <Button
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Search"
+            android:layout_height="75dp"
+            android:text="Search by location"
             android:id="@+id/location_search"
             android:layout_gravity="center"
-            android:background="#dc3333"
+            android:background="@drawable/round_shape_btn"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:layout_marginBottom="2dp" />
+            android:layout_marginBottom="20dp"
+            android:textSize="22dp" />
 
         <Button
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="75dp"
             android:text="Add Location"
             android:id="@+id/location_add"
             android:layout_gravity="center"
-            android:background="#dc3333"
+            android:background="@drawable/round_shape_btn"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:layout_marginBottom="2dp" />
+            android:layout_marginBottom="2dp"
+            android:textSize="22dp" />
 
     </LinearLayout>
 

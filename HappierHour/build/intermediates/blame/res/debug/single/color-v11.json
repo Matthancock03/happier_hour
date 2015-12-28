@@ -1,15 +1,7 @@
 [
     {
-        "merged": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
-        "source": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
-    },
-    {
         "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
         "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
-    },
-    {
-        "merged": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
-        "source": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
     },
     {
         "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",

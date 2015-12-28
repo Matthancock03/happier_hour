@@ -1,9 +1,5 @@
 [
     {
-        "merged": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/res/merged/debug/menu/menu_main.xml",
-        "source": "/Users/jianganson72/Desktop/happier_hour/HappierHour/src/main/res/menu/menu_main.xml"
-    },
-    {
         "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/menu/menu_main.xml",
         "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/res/menu/menu_main.xml"
     }

@@ -2,9 +2,5 @@
     {
         "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout-v21/place_autocomplete_fragment.xml",
         "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/layout-v21/place_autocomplete_fragment.xml"
-    },
-    {
-        "merged": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout-v21/place_autocomplete_fragment.xml",
-        "source": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/layout-v21/place_autocomplete_fragment.xml"
     }
 ]

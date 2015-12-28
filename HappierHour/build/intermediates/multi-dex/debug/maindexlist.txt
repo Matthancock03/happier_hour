@@ -346,8 +346,8 @@ bolts/Task.class
 com/google/common/collect/ImmutableSortedMapFauxverideShim.class
 android/support/design/widget/ValueAnimatorCompat.class
 android/support/v4/media/RatingCompat$1.class
-com/google/gson/reflect/TypeToken.class
 com/google/common/collect/ImmutableTable.class
+com/google/gson/reflect/TypeToken.class
 android/support/v7/internal/widget/AdapterViewCompat.class
 com/google/common/collect/GeneralRange.class
 com/google/gson/annotations/SerializedName.class
