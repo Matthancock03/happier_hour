@@ -1,6 +1,7 @@
 package com.parse.happierhour;
 
 import android.app.Activity;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.location.Location;
 import android.location.LocationListener;
@@ -109,11 +110,15 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
                     }else if(objects.size() > 0) {
                         Log.i(TAG, "Bars Returned" + objects.size());
                         bars = (ArrayList) objects;
-                        MapFragment mapFragment = (MapFragment) getActivity().getFragmentManager().findFragmentById(R.id.map);
+                        MapFragment mapFragment =  new MapFragment(); //(MapFragment) getActivity().getFragmentManager().findFragmentById(R.id.map);
+                        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+                        transaction.add(R.id.map_frame, mapFragment).commit();
                         mapFragment.getMapAsync(con);
                     }else{
                         Log.i(TAG, "No Bars Returned");
-                        MapFragment mapFragment = (MapFragment) getActivity().getFragmentManager().findFragmentById(R.id.map);
+                        MapFragment mapFragment =  new MapFragment(); //(MapFragment) getActivity().getFragmentManager().findFragmentById(R.id.map);
+                        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+                        transaction.add(R.id.map_frame, mapFragment).commit();
                         mapFragment.getMapAsync(con);
                     }
                 }

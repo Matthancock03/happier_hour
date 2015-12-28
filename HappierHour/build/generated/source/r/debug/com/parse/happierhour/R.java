@@ -2572,8 +2572,8 @@ containing a value of this type.
         public static final int location_search=0x7f0c00b7;
         public static final int login_button=0x7f0c0088;
         public static final int login_header=0x7f0c008a;
-        public static final int map=0x7f0c00b9;
         public static final int map_button=0x7f0c00b6;
+        public static final int map_frame=0x7f0c00b9;
         public static final int media_actions=0x7f0c00c0;
         public static final int messenger_send_button=0x7f0c00bc;
         public static final int middle=0x7f0c002a;
