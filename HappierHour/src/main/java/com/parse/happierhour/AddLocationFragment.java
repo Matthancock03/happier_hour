@@ -11,6 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
@@ -21,6 +24,9 @@ import com.google.android.gms.location.places.ui.PlaceAutocomplete;
 import com.parse.ParseACL;
 import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
+
+import java.util.HashMap;
+import java.util.List;
 
 
 /**
@@ -38,6 +44,9 @@ public class AddLocationFragment extends Fragment {
     int PLACE_AUTOCOMPLETE_REQUEST_CODE = 1;
     Place place;
     Button saveButton;
+    EditText tags, startTime, endTime;
+    TextView name, address, phone;
+    CheckBox mon,tues,wed,thurs,fri,sat,sun;
     Context con;
 
     private OnFragmentInteractionListener mListener;
@@ -78,7 +87,19 @@ public class AddLocationFragment extends Fragment {
                 saveLocation();
             }
         });
-
+        name = (TextView) view.findViewById(R.id.location_name);
+        address = (TextView) view.findViewById(R.id.location_address);
+        phone = (TextView) view.findViewById(R.id.location_phone);
+        tags = (EditText) view.findViewById(R.id.tags);
+        startTime = (EditText) view.findViewById(R.id.start_time);
+        endTime = (EditText) view.findViewById(R.id.end_time);
+        mon = (CheckBox)view.findViewById(R.id.monday);
+        tues = (CheckBox)view.findViewById(R.id.tuesday);
+        wed = (CheckBox)view.findViewById(R.id.wednesday);
+        thurs = (CheckBox)view.findViewById(R.id.thursday);
+        fri = (CheckBox)view.findViewById(R.id.friday);
+        sat = (CheckBox)view.findViewById(R.id.saturday);
+        sun = (CheckBox)view.findViewById(R.id.sunday);
         con = getActivity();
         // Inflate the layout for this fragment
         findPlace(view);
@@ -134,6 +155,7 @@ public class AddLocationFragment extends Fragment {
         Mapfragment map = new Mapfragment();
         Log.i(TAG, "Save Location ");
 
+
         if(place != null) {
             ParseGeoPoint point = new ParseGeoPoint();
             point.setLatitude(place.getLatLng().latitude);
@@ -141,7 +163,7 @@ public class AddLocationFragment extends Fragment {
 
             ParseACL acl = new ParseACL();
             acl.setPublicReadAccess(true);
-
+            acl.setPublicWriteAccess(true);
             ParseObject bar = new ParseObject("Locations");
 
             bar.put("Id", place.getId());
@@ -152,12 +174,56 @@ public class AddLocationFragment extends Fragment {
             bar.put("PhoneNumber", place.getPhoneNumber());
             bar.put("Rating", place.getRating());
             bar.put("coordinates", point);
+            bar.put("StartTime", startTime.getText().toString());
+            bar.put("EndTime", endTime.getText().toString());
+            checkDays(bar);
             bar.setACL(acl);
             bar.saveInBackground();
-            map.bars.add(bar);
+            //map.bars.add(bar);
         }
         main.swapFragment(map); //Go Back to Home Page
     }
+
+
+    private void checkDays(ParseObject bar) {
+
+        if(mon.isChecked()){
+           bar.put("monday", true);
+        }else{
+            bar.put("monday", false);
+        }
+        if(tues.isChecked()){
+            bar.put("tuesday", true);
+        }else{
+            bar.put("tuesday", false);
+        }
+        if(wed.isChecked()){
+            bar.put("wednesday", true);
+        }else{
+            bar.put("wednesday", false);
+        }
+        if(thurs.isChecked()){
+            bar.put("thursday", true);
+        }else{
+            bar.put("thursday", false);
+        }
+        if(fri.isChecked()){
+            bar.put("friday", true);
+        }else{
+            bar.put("friday", false);
+        }
+        if(sat.isChecked()){
+            bar.put("saturday", true);
+        }else{
+            bar.put("saturday", false);
+        }
+        if(sun.isChecked()){
+            bar.put("sunday", true);
+        }else{
+            bar.put("sunday", false);
+        }
+    }
+
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         if (requestCode == PLACE_AUTOCOMPLETE_REQUEST_CODE) {
@@ -169,6 +235,21 @@ public class AddLocationFragment extends Fragment {
                 Log.i(TAG, "Address: " + place.getAddress());
                 Log.i(TAG, "Phone Number: " + place.getPhoneNumber());
                 Log.i(TAG, "Rating: " + place.getRating());
+
+                name.setText(place.getName());
+                address.setText(place.getAddress());
+                phone.setText(place.getPhoneNumber());
+                List<Integer> types =  place.getPlaceTypes();
+
+                /*
+                 * Bar == 9
+                 * Restaurant == 79
+                 * Food == 38
+
+                for(int x: types){
+                    Log.i(TAG, "Type: " + x);
+                }
+                */
 
             } else if (resultCode == PlaceAutocomplete.RESULT_ERROR) {
                 Status status = PlaceAutocomplete.getStatus(con, data);

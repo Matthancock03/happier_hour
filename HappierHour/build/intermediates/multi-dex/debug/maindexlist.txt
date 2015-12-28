@@ -322,6 +322,7 @@ com/google/android/gms/location/GeofencingApi.class
 com/google/android/gms/common/api/ResultCallback.class
 com/google/android/gms/common/zze.class
 com/parse/ParseACL.class
+com/parse/happierhour/DisplayLocationFragment.class
 com/facebook/login/LoginFragment.class
 com/google/android/gms/auth/api/signin/internal/zzl.class
 android/support/design/widget/TabLayout$Mode.class
@@ -335,6 +336,7 @@ com/google/android/gms/auth/api/signin/internal/SignInHubActivity$zza.class
 android/support/v4/app/FragmentTransaction.class
 com/google/common/base/Strings.class
 android/support/v4/app/ActivityCompat.class
+com/parse/happierhour/DisplayLocationFragment$OnFragmentInteractionListener.class
 android/support/annotation/BoolRes.class
 android/support/design/widget/CoordinatorLayout$HierarchyChangeListener.class
 android/support/v4/media/MediaMetadataCompat.class

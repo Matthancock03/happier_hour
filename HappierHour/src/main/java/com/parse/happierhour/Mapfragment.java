@@ -28,6 +28,7 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import im.delight.android.location.SimpleLocation;
@@ -46,6 +47,8 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
     private SimpleLocation position;
     GoogleMap map;
     ArrayList<ParseObject> bars = new ArrayList<>();
+    HashMap<String, Integer> markerMap = new HashMap<>();
+
     Location location;
     LatLng myLocation;
     MainActivity main;
@@ -83,10 +86,18 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
         main = (MainActivity)getActivity();
 
         Log.i(TAG, "On CreateView");
+
+        if (!position.hasLocationEnabled()) {
+            // ask the user to enable location access
+            SimpleLocation.openSettings(main);
+        }
+
+        myLocation = new LatLng(position.getLatitude(), position.getLongitude());
         if(bars.size() == 0){
 
             Log.i(TAG, "Bars Empty");
-            ParseGeoPoint userLocation = new ParseGeoPoint();
+            ParseGeoPoint userLocation = new ParseGeoPoint(position.getLatitude(), position.getLongitude());
+
             ParseQuery<ParseObject> query = ParseQuery.getQuery("Locations");
             query.whereNear("coordinates", userLocation);
             query.setLimit(25);
@@ -180,12 +191,15 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
     public void setMapMarkers(){
         Log.i(TAG, "Map Markers");
         Log.i(TAG, "Bars Size: " + bars.size());
-        for(ParseObject bar : bars) {
+        for(int x = 0; x < bars.size(); x++) {
+            ParseObject bar = bars.get(x);
+
             Marker marker = map.addMarker(new MarkerOptions()
                     .position(new LatLng(bar.getDouble("Lat"), bar.getDouble("Long")))
                     .title(bar.getString("Name"))
                     .snippet("Rating: " + bar.getDouble("Rating")));
 
+            markerMap.put(marker.getId(), x);
         }
     }
 
@@ -236,7 +250,13 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
 
     @Override
     public void onInfoWindowClick(Marker marker) {
-        Log.d(TAG, "Info Window Click");
+        Log.i(TAG, "Info Window Click");
+        Log.i(TAG, marker.getId());
+        int barIndex = markerMap.get(marker.getId());
+
+        DisplayLocationFragment display = new DisplayLocationFragment();
+        display.bar = bars.get(barIndex);
+        main.swapFragment(display);
     }
 
     /**
@@ -258,11 +278,20 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
     public void onResume() {
         super.onResume();
         Log.d(TAG, "On Resume");
+        position.beginUpdates();
     }
+
+    @Override
+    public void onPause() {
+        position.endUpdates();
+        super.onPause();
+    }
+
     @Override
     public void onDestroy() {
         super.onDestroy();
         Log.d(TAG, "On Destroy");
         bars.clear();
+        markerMap.clear();
     }
 }

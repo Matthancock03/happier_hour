@@ -1,6 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="com.parse.happierhour.AddLocationFragment">
+    android:layout_height="wrap_content" tools:context="com.parse.happierhour.AddLocationFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -14,126 +14,296 @@
         android:textSize="42dp"
         android:textStyle="bold|italic"
         android:textColor="#dc3333"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="15dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
+
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Name:"
-        android:id="@+id/name"
-        android:layout_marginTop="30dp"
+        android:id="@+id/scrollView"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="2.40"
+        android:layout_below="@+id/location_Header"
+        android:fillViewport="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/location_Header"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="30dp" />
+        android:divider="#938b8b"
+        android:dividerPadding="6dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="5dp"
+        android:weightSum="1">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Address:"
-        android:id="@+id/address"
-        android:layout_below="@+id/name"
-        android:layout_alignStart="@+id/name"
-        android:layout_marginTop="25dp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="5dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="City/Town:"
-        android:id="@+id/city"
-        android:layout_below="@+id/address"
-        android:layout_alignStart="@+id/address"
-        android:layout_marginTop="25dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name:"
+                android:id="@+id/name_header"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginLeft="5dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="State:"
-        android:id="@+id/state"
-        android:layout_below="@+id/city"
-        android:layout_alignStart="@+id/city"
-        android:layout_marginTop="25dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:id="@+id/location_name"
+                android:layout_gravity="bottom|center_horizontal"
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:layout_marginLeft="20dp" />
+        </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Country:"
-        android:id="@+id/country"
-        android:layout_below="@+id/state"
-        android:layout_alignStart="@+id/state"
-        android:layout_marginTop="25dp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/name_Field"
-        android:hint="Enter Location Name"
-        android:layout_alignBaseline="@+id/name"
-        android:layout_alignBottom="@+id/name"
-        android:layout_centerHorizontal="true"
-        android:gravity="center" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address:"
+                android:id="@+id/address_header"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginLeft="5dp" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/address_Field"
-        android:layout_below="@+id/name_Field"
-        android:layout_alignStart="@+id/name_Field"
-        android:layout_alignEnd="@+id/name_Field"
-        android:hint="Enter Address"
-        android:gravity="center" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:id="@+id/location_address"
+                android:layout_gravity="bottom|center_horizontal"
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:layout_marginLeft="20dp" />
+        </LinearLayout>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/city_Field"
-        android:layout_below="@+id/address_Field"
-        android:layout_alignStart="@+id/address_Field"
-        android:layout_alignEnd="@+id/address_Field"
-        android:gravity="center"
-        android:hint="Enter City" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/state_Field"
-        android:layout_below="@+id/city_Field"
-        android:layout_alignStart="@+id/city_Field"
-        android:layout_alignEnd="@+id/city_Field"
-        android:hint="Enter State"
-        android:gravity="center" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone:"
+                android:id="@+id/phone_header"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginLeft="5dp" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/country_Field"
-        android:layout_below="@+id/state_Field"
-        android:layout_alignStart="@+id/state_Field"
-        android:layout_alignEnd="@+id/state_Field"
-        android:gravity="center"
-        android:hint="Enter Country" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="555-555-5555"
+                android:id="@+id/location_phone"
+                android:layout_gravity="bottom|center_horizontal"
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:layout_marginLeft="20dp" />
+        </LinearLayout>
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Add Location"
-        android:id="@+id/add_location_button"
-        android:layout_marginTop="28dp"
-        android:layout_below="@+id/country_Field"
-        android:layout_gravity="center"
-        android:background="#dc3333"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:layout_marginBottom="2dp"
-        android:layout_alignStart="@+id/country_Field"
-        android:layout_alignEnd="@+id/country_Field" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tags:"
+                android:id="@+id/tags_header"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginLeft="5dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:id="@+id/tags"
+                android:layout_weight="1"
+                android:layout_marginLeft="25dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start Time:"
+                android:id="@+id/start_time_header"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginLeft="5dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="time"
+                android:ems="10"
+                android:id="@+id/start_time"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="End Time:"
+                android:id="@+id/end_time_header"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginLeft="5dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="time"
+                android:ems="10"
+                android:id="@+id/end_time"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Days Available:"
+            android:id="@+id/days_header"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginLeft="5dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="M"
+                android:id="@+id/monday"
+                android:layout_marginLeft="5dp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="T"
+                android:id="@+id/tuesday"
+                android:layout_marginLeft="1dp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="W"
+                android:id="@+id/wednesday"
+                android:layout_marginLeft="1dp"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TH"
+                android:id="@+id/thursday"
+                android:layout_marginLeft="1dp"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="F"
+                android:id="@+id/friday"
+                android:layout_marginLeft="1dp"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="S"
+                android:id="@+id/saturday"
+                android:layout_marginLeft="1dp"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SU"
+                android:id="@+id/sunday"
+                android:layout_marginLeft="1dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Specials:"
+            android:id="@+id/specials"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"/>
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/editText"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Location"
+            android:id="@+id/add_location_button"
+            android:layout_gravity="center"
+            android:background="#dc3333"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp" />
+
+    </LinearLayout>
+
+    </ScrollView>
 </RelativeLayout>

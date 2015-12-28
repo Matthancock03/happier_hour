@@ -1,12 +1,14 @@
 package com.parse.happierhour;
 
+import android.app.Activity;
+import android.app.Fragment;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +19,8 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.parse.ParseObject;
 
 import java.io.File;
 
@@ -30,22 +34,16 @@ import java.io.File;
  * create an instance of this fragment.
  */
 public class DisplayLocationFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
+    private static final String TAG = "DisplayFragment";
     private static HorizontalScrollView horizonalscrollview;
     private TextView namefield;
     private TextView addressfield;
     private TextView phonenumberfield;
-    private TextView ratingfield;
+    private TextView ratingfield, startTime, endTime;
     private LinearLayout gallery;
     private ListView reviews;
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    ParseObject bar;
 
     private OnFragmentInteractionListener mListener;
 
@@ -53,20 +51,11 @@ public class DisplayLocationFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment DisplayLocationFragment.
-     */
+
     // TODO: Rename and change types and number of parameters
     public static DisplayLocationFragment newInstance(String param1, String param2) {
         DisplayLocationFragment fragment = new DisplayLocationFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -75,8 +64,6 @@ public class DisplayLocationFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
@@ -92,11 +79,23 @@ public class DisplayLocationFragment extends Fragment {
         ratingfield = (TextView) view.findViewById(R.id.ratingField);
         gallery = (LinearLayout) view.findViewById(R.id.Gallery);
         reviews = (ListView) view.findViewById(R.id.ReviewListView);
+        startTime = (TextView) view.findViewById(R.id.startField);
+        endTime = (TextView) view.findViewById(R.id.endField);
+
+        if(bar != null){
+            namefield.setText(bar.getString("Name"));
+            addressfield.setText(bar.getString("Address"));
+            phonenumberfield.setText(bar.getString("PhoneNumber"));
+            ratingfield.setText(String.valueOf(bar.getDouble("Rating")).substring(0,4));
+            startTime.setText(bar.getString("StartTime"));
+            endTime.setText(bar.getString("EndTime"));
+
+        }
 
         String ExternalStorageDirectoryPath = Environment
                 .getExternalStorageDirectory()
                 .getAbsolutePath();
-
+        /*
         String targetPath = ExternalStorageDirectoryPath + "/test/";
 
         Toast.makeText(getActivity(), targetPath, Toast.LENGTH_LONG).show();
@@ -106,6 +105,7 @@ public class DisplayLocationFragment extends Fragment {
         for (File file : files){
             gallery.addView(insertPhoto(file.getAbsolutePath()));
         }
+        */
 
         // Inflate the layout for this fragment
         return view;
@@ -170,14 +170,15 @@ public class DisplayLocationFragment extends Fragment {
             mListener.onFragmentInteraction(uri);
         }
     }
-
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
+    public void onAttach(Activity activity) {
+        Log.i(TAG, "On Attach");
+
+        super.onAttach(activity);
+        try {
+            mListener = (OnFragmentInteractionListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString()
                     + " must implement OnFragmentInteractionListener");
         }
     }
