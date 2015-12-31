@@ -7,7 +7,7 @@
     <TextView android:layout_width="match_parent" android:layout_height="79dp"
         android:text="Location Search"
         android:gravity="center"
-        android:textColor="#dc3333"
+        android:textColor="#7B1900"
         android:textSize="42dp"
         android:textStyle="bold" />
 

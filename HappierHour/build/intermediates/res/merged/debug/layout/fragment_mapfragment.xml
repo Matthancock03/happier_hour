@@ -1,17 +1,48 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.parse.happierhour.Mapfragment"
-    android:id="@+id/map_frame">
+    tools:context="com.parse.happierhour.Mapfragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="66dp"
-        android:text="Happy Hours Near You"
-        android:gravity="center"
-        android:textStyle="bold|italic"
-        android:textSize="32dp"
-        android:textColor="#e42929" />
 
 
-</FrameLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/linearLayout">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="List"
+            android:id="@+id/button"
+            android:layout_weight="1"
+            android:background="@drawable/round_shape_btn"
+            android:layout_marginRight="5dp"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Map"
+            android:id="@+id/button2"
+            android:layout_weight="1"
+            android:background="@drawable/round_shape_btn"
+            android:layout_marginLeft="5dp"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:id="@+id/map_frame"></FrameLayout>
+</RelativeLayout>

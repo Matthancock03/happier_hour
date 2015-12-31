@@ -8,7 +8,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_login" tools:context="com.parse.happierhour.Login"
-    android:background="@mipmap/cocktail">
+    android:background="@mipmap/bar3">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,9 +46,9 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:textColor="#ffffff"
         android:textSize="44dp"
-        android:textStyle="bold|italic" />
+        android:textStyle="bold|italic"
+        android:textColor="#7B1900" />
 
 
 </RelativeLayout>

@@ -34,7 +34,7 @@ import com.parse.ParseObject;
 public class HomePageFragment extends Fragment {
     private static final String TAG = "HomePage";
     MainActivity main;
-    Button mapButton;
+    Button nearMeButton;
     Button addLocation;
     Button searchLocation;
     int PLACE_AUTOCOMPLETE_REQUEST_CODE = 1;
@@ -76,9 +76,9 @@ public class HomePageFragment extends Fragment {
                 R.layout.fragment_home_page, container, false);
         main = (MainActivity)getActivity();
 
-        //Map Button
-        mapButton = (Button) view.findViewById(R.id.map_button);
-        mapButton.setOnClickListener(new View.OnClickListener() {
+        // Near me Button
+        nearMeButton = (Button) view.findViewById(R.id.map_button);
+        nearMeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("Home Fragment", "Clicky Clicky");
