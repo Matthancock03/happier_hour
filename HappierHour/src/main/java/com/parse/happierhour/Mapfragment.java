@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -54,6 +55,10 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
     LatLng myLocation;
     MainActivity main;
     Mapfragment con;
+
+    Button mapButton;
+    Button listButton;
+
     private OnFragmentInteractionListener mListener;
 
     // TODO: Rename and change types and number of parameters
@@ -92,6 +97,8 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
             // ask the user to enable location access
             SimpleLocation.openSettings(main);
         }
+        mapButton = (Button) view.findViewById(R.id.map_button);
+        listButton = (Button) view.findViewById(R.id.list_button);
 
         myLocation = new LatLng(position.getLatitude(), position.getLongitude());
         if(bars.size() == 0){
@@ -112,13 +119,13 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
                         bars = (ArrayList) objects;
                         MapFragment mapFragment =  new MapFragment(); //(MapFragment) getActivity().getFragmentManager().findFragmentById(R.id.map);
                         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-                        transaction.add(R.id.map_frame, mapFragment).commit();
+                        transaction.replace(R.id.map_frame, mapFragment).commit();
                         mapFragment.getMapAsync(con);
                     }else{
                         Log.i(TAG, "No Bars Returned");
                         MapFragment mapFragment =  new MapFragment(); //(MapFragment) getActivity().getFragmentManager().findFragmentById(R.id.map);
                         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-                        transaction.add(R.id.map_frame, mapFragment).commit();
+                        transaction.replace(R.id.map_frame, mapFragment).commit();
                         mapFragment.getMapAsync(con);
                     }
                 }
@@ -193,6 +200,15 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
         }
     }
 
+    public void loadList(){
+
+    }
+
+    public void loadMap(){
+
+        
+    }
+
     public void setMapMarkers(){
         Log.i(TAG, "Map Markers");
         Log.i(TAG, "Bars Size: " + bars.size());
@@ -231,25 +247,6 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
                 Log.d(TAG, e.toString());
             }
 
-
-    }
-
-    private void centerMapOnLocation(Place place) {
-
-        try {
-            map.setMyLocationEnabled(true);
-            location = map.getMyLocation();
-            myLocation = place.getLatLng();
-            if (myLocation != null) {
-                //myLocation = new LatLng(location.getLatitude(),location.getLongitude());
-                map.animateCamera(CameraUpdateFactory.newLatLngZoom(myLocation,
-                        13));
-            }
-        }catch(SecurityException e){
-
-        }catch(Exception e){
-            Log.d(TAG, e.toString());
-        }
 
     }
 

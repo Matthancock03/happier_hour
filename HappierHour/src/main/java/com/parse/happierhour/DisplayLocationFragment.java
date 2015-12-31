@@ -40,7 +40,7 @@ public class DisplayLocationFragment extends Fragment {
     private TextView namefield;
     private TextView addressfield;
     private TextView phonenumberfield;
-    private TextView ratingfield, startTime, endTime;
+    private TextView ratingfield, hours;
     private LinearLayout gallery;
     private ListView reviews;
     ParseObject bar;
@@ -72,24 +72,22 @@ public class DisplayLocationFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_display_location, container, false);
 
-        horizonalscrollview = (HorizontalScrollView) view.findViewById(R.id.ImagesHorizontalView);
+        horizonalscrollview = (HorizontalScrollView) view.findViewById(R.id.menuPictures);
         namefield = (TextView) view.findViewById(R.id.nameField);
-        addressfield = (TextView) view.findViewById(R.id.addressField);
-        phonenumberfield = (TextView) view.findViewById(R.id.phonenumberField);
-        ratingfield = (TextView) view.findViewById(R.id.ratingField);
-        gallery = (LinearLayout) view.findViewById(R.id.Gallery);
+        //addressfield = (TextView) view.findViewById(R.id.addressField);
+        //phonenumberfield = (TextView) view.findViewById(R.id.phonenumberField);
+        //ratingfield = (TextView) view.findViewById(R.id.ratingField);
+        gallery = (LinearLayout) view.findViewById(R.id.menuPics);
         reviews = (ListView) view.findViewById(R.id.ReviewListView);
-        startTime = (TextView) view.findViewById(R.id.startField);
-        endTime = (TextView) view.findViewById(R.id.endField);
+        hours = (TextView) view.findViewById(R.id.hoursField);
+
 
         if(bar != null){
             namefield.setText(bar.getString("Name"));
-            addressfield.setText(bar.getString("Address"));
-            phonenumberfield.setText(bar.getString("PhoneNumber"));
-            ratingfield.setText(String.valueOf(bar.getDouble("Rating")).substring(0,4));
-            startTime.setText(bar.getString("StartTime"));
-            endTime.setText(bar.getString("EndTime"));
-
+            //addressfield.setText(bar.getString("Address"));
+            //phonenumberfield.setText(bar.getString("PhoneNumber"));
+            //ratingfield.setText(String.valueOf(bar.getDouble("Rating")).substring(0,4));
+            hours.setText(bar.getString("StartTime") + " - " + bar.getString("EndTime"));
         }
 
         String ExternalStorageDirectoryPath = Environment
