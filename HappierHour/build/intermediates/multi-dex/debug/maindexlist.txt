@@ -346,8 +346,8 @@ bolts/Task.class
 com/google/common/collect/ImmutableSortedMapFauxverideShim.class
 android/support/design/widget/ValueAnimatorCompat.class
 android/support/v4/media/RatingCompat$1.class
-com/google/gson/reflect/TypeToken.class
 com/google/common/collect/ImmutableTable.class
+com/google/gson/reflect/TypeToken.class
 android/support/v7/internal/widget/AdapterViewCompat.class
 com/google/common/collect/GeneralRange.class
 com/google/gson/annotations/SerializedName.class
@@ -385,6 +385,7 @@ android/support/design/widget/TabLayout$TabGravity.class
 android/support/v4/util/SimpleArrayMap.class
 com/google/android/gms/common/annotation/KeepName.class
 com/google/common/base/Enums.class
+com/parse/happierhour/LocationListFragment.class
 android/support/v7/widget/LinearLayoutCompat$LayoutParams.class
 com/google/common/collect/Iterables.class
 android/support/v4/util/LogWriter.class
@@ -424,6 +425,7 @@ com/google/android/gms/auth/api/signin/zzd.class
 android/support/v4/widget/MaterialProgressDrawable$Ring.class
 com/google/common/util/concurrent/CycleDetectingLockFactory$LockGraphNode.class
 android/support/v7/internal/view/menu/MenuItemImpl.class
+com/parse/happierhour/LocationListFragment$OnFragmentInteractionListener.class
 com/google/common/collect/ImmutableMapEntry.class
 android/support/v4/app/SuperNotCalledException.class
 com/google/android/gms/common/api/internal/zzv.class

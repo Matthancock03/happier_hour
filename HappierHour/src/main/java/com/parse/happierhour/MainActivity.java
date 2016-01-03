@@ -31,7 +31,7 @@ import com.parse.ParseObject;
 import com.google.android.gms.*;
 
 public class MainActivity extends AppCompatActivity implements HomePageFragment.OnFragmentInteractionListener, Mapfragment.OnFragmentInteractionListener,
-AddLocationFragment.OnFragmentInteractionListener, LocationSearchFragment.OnFragmentInteractionListener, DisplayLocationFragment.OnFragmentInteractionListener{
+AddLocationFragment.OnFragmentInteractionListener, LocationSearchFragment.OnFragmentInteractionListener, DisplayLocationFragment.OnFragmentInteractionListener, LocationListFragment.OnFragmentInteractionListener{
 
     Fragment fragment;
     FragmentTransaction transaction;
@@ -115,4 +115,8 @@ AddLocationFragment.OnFragmentInteractionListener, LocationSearchFragment.OnFrag
         }
     }
 
+    @Override
+    public void onFragmentInteraction(String id) {
+
+    }
 }

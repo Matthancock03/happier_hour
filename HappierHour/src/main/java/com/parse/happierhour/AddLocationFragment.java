@@ -25,7 +25,6 @@ import com.parse.ParseACL;
 import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
 
-import java.util.HashMap;
 import java.util.List;
 
 
@@ -87,7 +86,7 @@ public class AddLocationFragment extends Fragment {
                 saveLocation();
             }
         });
-        name = (TextView) view.findViewById(R.id.location_name);
+        name = (TextView) view.findViewById(R.id.location_list_name);
         address = (TextView) view.findViewById(R.id.location_address);
         phone = (TextView) view.findViewById(R.id.location_phone);
         tags = (EditText) view.findViewById(R.id.tags);

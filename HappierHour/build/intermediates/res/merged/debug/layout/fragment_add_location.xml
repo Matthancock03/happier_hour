@@ -62,7 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Name"
-                android:id="@+id/location_name"
+                android:id="@+id/location_list_name"
                 android:layout_gravity="bottom|center_horizontal"
                 android:textSize="18dp"
                 android:textColor="#000000"

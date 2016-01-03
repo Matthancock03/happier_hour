@@ -124,6 +124,10 @@
         "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/layout/abc_popup_menu_item_layout.xml"
     },
     {
+        "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout/location_list_item.xml",
+        "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/res/layout/location_list_item.xml"
+    },
+    {
         "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/layout/fragment_mapfragment.xml",
         "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/res/layout/fragment_mapfragment.xml"
     },

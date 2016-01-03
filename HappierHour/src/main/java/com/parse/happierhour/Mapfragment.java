@@ -36,14 +36,6 @@ import java.util.List;
 import im.delight.android.location.SimpleLocation;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link Mapfragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link Mapfragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
     private static final String TAG = "MapFragment";
     private SimpleLocation position;
@@ -51,18 +43,18 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
     ArrayList<ParseObject> bars = new ArrayList<>();
     HashMap<String, Integer> markerMap = new HashMap<>();
 
-    Location location;
     LatLng myLocation;
     MainActivity main;
     Mapfragment con;
-
+    LocationListFragment listFrag;
+    MapFragment mapFragment;
     Button mapButton;
     Button listButton;
 
     private OnFragmentInteractionListener mListener;
 
     // TODO: Rename and change types and number of parameters
-    public static Mapfragment newInstance(String param1, String param2) {
+    public static Mapfragment newInstance() {
         Mapfragment fragment = new Mapfragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
@@ -89,7 +81,7 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
         // Inflate the layout for this fragment
         View view = inflater.inflate(
                 R.layout.fragment_mapfragment, container, false);
-        main = (MainActivity)getActivity();
+        main = (MainActivity) getActivity();
 
         Log.i(TAG, "On CreateView");
 
@@ -97,11 +89,30 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
             // ask the user to enable location access
             SimpleLocation.openSettings(main);
         }
+
         mapButton = (Button) view.findViewById(R.id.map_button);
+        mapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadMap();
+            }
+        });
+
         listButton = (Button) view.findViewById(R.id.list_button);
+        listButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadList();
+            }
+        });
 
         myLocation = new LatLng(position.getLatitude(), position.getLongitude());
-        if(bars.size() == 0){
+
+
+        Log.i(TAG, "Latitude: " + position.getLatitude());
+        Log.i(TAG, "Longitude: " + position.getLongitude());
+
+        if (bars.size() == 0) {
 
             Log.i(TAG, "Bars Empty");
             ParseGeoPoint userLocation = new ParseGeoPoint(position.getLatitude(), position.getLongitude());
@@ -112,60 +123,17 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
             query.findInBackground(new FindCallback<ParseObject>() {
                 @Override
                 public void done(List<ParseObject> objects, ParseException e) {
-                    if(e != null){
+                    if (e != null) {
                         Log.d("Map ParseException ", e.toString());
-                    }else if(objects.size() > 0) {
-                        Log.i(TAG, "Bars Returned" + objects.size());
+                    } else {
                         bars = (ArrayList) objects;
-                        MapFragment mapFragment =  new MapFragment(); //(MapFragment) getActivity().getFragmentManager().findFragmentById(R.id.map);
-                        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-                        transaction.replace(R.id.map_frame, mapFragment).commit();
-                        mapFragment.getMapAsync(con);
-                    }else{
-                        Log.i(TAG, "No Bars Returned");
-                        MapFragment mapFragment =  new MapFragment(); //(MapFragment) getActivity().getFragmentManager().findFragmentById(R.id.map);
-                        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-                        transaction.replace(R.id.map_frame, mapFragment).commit();
-                        mapFragment.getMapAsync(con);
+                        loadList();
                     }
                 }
             });
         }
 
         return view;
-    }
-
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-
-        // Acquire a reference to the system Location Manager
-        LocationManager locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
-
-        // Define a listener that responds to location updates
-        LocationListener locationListener = new LocationListener() {
-            public void onLocationChanged(Location location) {
-                Log.i(TAG, "Location Changed in Map Fragment");
-                con.location = location;
-            }
-
-            public void onStatusChanged(String provider, int status, Bundle extras) {}
-
-            public void onProviderEnabled(String provider) {}
-
-            public void onProviderDisabled(String provider) {}
-        };
-
-// Register the listener with the Location Manager to receive location updates
-        try {
-            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 100, 100, locationListener);
-        }catch(SecurityException e){
-            Log.d("Security Exception", e.toString());
-        }catch(Exception e){
-            Log.d("Map Fragment", e.toString());
-        }
     }
 
     @Override
@@ -189,9 +157,9 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        if(googleMap == null){
+        if (googleMap == null) {
             Log.d("Map Fragment", "Map returned from Async is null");
-        }else {
+        } else {
             Log.d("Map Fragment", "onMapReady");
             map = googleMap;
             centerMapOnMyLocation();
@@ -200,19 +168,38 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
         }
     }
 
-    public void loadList(){
+    public void loadList() {
+        Log.i(TAG, "Load List");
+        if (listFrag == null) {
+            listFrag = LocationListFragment.newInstance(bars, myLocation);
+        }
 
+        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+        transaction.replace(R.id.map_frame, listFrag).commit();
     }
 
-    public void loadMap(){
+    public void loadMap() {
+        Log.i(TAG, "Load Map");
+        if (mapFragment == null) {
+            mapFragment = new MapFragment();
+            if (bars.size() <= 0) {
+                Log.i(TAG, "No Bars Returned");
+            }
+            FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+            transaction.replace(R.id.map_frame, mapFragment).commit();
+            mapFragment.getMapAsync(con);
 
-        
+        } else {
+            FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+            transaction.replace(R.id.map_frame, mapFragment).commit();
+            mapFragment.getMapAsync(con);
+        }
     }
 
-    public void setMapMarkers(){
+    public void setMapMarkers() {
         Log.i(TAG, "Map Markers");
         Log.i(TAG, "Bars Size: " + bars.size());
-        for(int x = 0; x < bars.size(); x++) {
+        for (int x = 0; x < bars.size(); x++) {
             ParseObject bar = bars.get(x);
 
             Marker marker = map.addMarker(new MarkerOptions()
@@ -226,26 +213,20 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
 
     private void centerMapOnMyLocation() {
 
-            try {
+        try {
 
-                map.setMyLocationEnabled(true);
-                location = map.getMyLocation();
+            map.setMyLocationEnabled(true);
 
-                if(bars.size() > 0) {
-                    myLocation = new LatLng(bars.get(0).getDouble("Lat"), bars.get(0).getDouble("Long"));
-                }else{
-                    myLocation = new LatLng(37.243599, -121.949057);
-                }
-                if (myLocation != null) {
-                    //myLocation = new LatLng(location.getLatitude(),location.getLongitude());
-                    map.animateCamera(CameraUpdateFactory.newLatLngZoom(myLocation,
-                            11));
-                }
-            } catch (SecurityException e) {
-
-            } catch (Exception e) {
-                Log.d(TAG, e.toString());
+            if (myLocation != null) {
+                //myLocation = new LatLng(location.getLatitude(),location.getLongitude());
+                map.animateCamera(CameraUpdateFactory.newLatLngZoom(myLocation,
+                        11));
             }
+        } catch (SecurityException e) {
+
+        } catch (Exception e) {
+            Log.d(TAG, e.toString());
+        }
 
 
     }
@@ -257,6 +238,7 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
         int barIndex = markerMap.get(marker.getId());
 
         DisplayLocationFragment display = new DisplayLocationFragment();
+
         display.bar = bars.get(barIndex);
         main.swapFragment(display, false);
     }
@@ -266,7 +248,7 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
      * fragment to allow an interaction in this fragment to be communicated
      * to the activity and potentially other fragments contained in that
      * activity.
-     * <p/>
+     * <p>
      * See the Android Training lesson <a href=
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
