@@ -1,8 +1,10 @@
 package com.parse.happierhour;
 
 import android.app.Activity;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.app.ListFragment;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -83,6 +85,22 @@ public class LocationListFragment extends ListFragment {
 
         display.bar = bars.get(position);
         main.swapFragment(display, false);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if(getActivity() != null) {
+            getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        }
+    }
+
+    @Override
+    public void onPause() {
+        if(getActivity() != null) {
+            getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR);
+        }
+        super.onPause();
     }
 
     public interface OnFragmentInteractionListener {

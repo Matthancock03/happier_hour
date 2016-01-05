@@ -3,6 +3,7 @@ package com.parse.happierhour;
 import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -70,8 +71,6 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
         super.onCreate(savedInstanceState);
         con = this;
         Log.i(TAG, "On Create");
-        if (getArguments() != null) {
-        }
         position = new SimpleLocation(getActivity());
     }
 
@@ -82,6 +81,7 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
         View view = inflater.inflate(
                 R.layout.fragment_mapfragment, container, false);
         main = (MainActivity) getActivity();
+        setRetainInstance(true);
 
         Log.i(TAG, "On CreateView");
 
@@ -263,11 +263,17 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
         super.onResume();
         Log.d(TAG, "On Resume");
         position.beginUpdates();
+        if(getActivity() != null) {
+            getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        }
     }
 
     @Override
     public void onPause() {
         position.endUpdates();
+        if(getActivity() != null) {
+            getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR);
+        }
         super.onPause();
     }
 

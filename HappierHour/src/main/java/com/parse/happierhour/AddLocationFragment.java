@@ -3,6 +3,7 @@ package com.parse.happierhour;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -14,6 +15,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
@@ -21,10 +23,14 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.AutocompleteFilter;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocomplete;
+import com.parse.FindCallback;
 import com.parse.ParseACL;
+import com.parse.ParseException;
 import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -47,6 +53,7 @@ public class AddLocationFragment extends Fragment {
     TextView name, address, phone, specials;
     CheckBox mon, tues, wed, thurs, fri, sat, sun;
     Context con;
+    public boolean exists = false;
 
     private OnFragmentInteractionListener mListener;
 
@@ -169,37 +176,57 @@ public class AddLocationFragment extends Fragment {
 
     public void saveLocation() {
 
-        Mapfragment map = new Mapfragment();
         Log.i(TAG, "Save Location ");
-
-
         if (place != null) {
-            ParseGeoPoint point = new ParseGeoPoint();
-            point.setLatitude(place.getLatLng().latitude);
-            point.setLongitude(place.getLatLng().longitude);
+            ParseQuery<ParseObject> query = ParseQuery.getQuery("Locations");
+            query.whereEqualTo("Id", place.getId());
+            query.setLimit(1);
+            query.findInBackground(new FindCallback<ParseObject>() {
+                @Override
+                public void done(List<ParseObject> objects, ParseException e) {
+                    if (e != null) {
+                        Toast.makeText(con, "Error on Save. Please try again.",
+                                Toast.LENGTH_SHORT).show();
+                        HomePageFragment home = new HomePageFragment();
+                        main.swapFragment(home, false);
 
-            ParseACL acl = new ParseACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            ParseObject bar = new ParseObject("Locations");
+                    } else if (objects != null && objects.size() > 0) {
+                        Toast.makeText(con, "Location already exists.",
+                                Toast.LENGTH_SHORT).show();
+                        HomePageFragment home = new HomePageFragment();
+                        main.swapFragment(home, false);
+                    } else {
+                        Mapfragment map = new Mapfragment();
+                        ParseGeoPoint point = new ParseGeoPoint();
+                        point.setLatitude(place.getLatLng().latitude);
+                        point.setLongitude(place.getLatLng().longitude);
 
-            bar.put("Id", place.getId());
-            bar.put("Name", place.getName());
-            bar.put("Lat", place.getLatLng().latitude);
-            bar.put("Long", place.getLatLng().longitude);
-            bar.put("Address", place.getAddress());
-            bar.put("PhoneNumber", place.getPhoneNumber());
-            bar.put("Rating", place.getRating());
-            bar.put("coordinates", point);
-            bar.put("StartTime", startTime.getText().toString());
-            bar.put("EndTime", endTime.getText().toString());
-            bar.put("Specials", specials.getText().toString());
-            checkDays(bar);
-            bar.setACL(acl);
-            bar.saveInBackground();
-            //map.bars.add(bar);
+                        ParseACL acl = new ParseACL();
+                        acl.setPublicReadAccess(true);
+                        acl.setPublicWriteAccess(true);
+                        ParseObject bar = new ParseObject("Locations");
+
+                        bar.put("Id", place.getId());
+                        bar.put("Name", place.getName());
+                        bar.put("SearchName", place.getName().toString().toLowerCase().replaceAll("'", ""));
+                        bar.put("Lat", place.getLatLng().latitude);
+                        bar.put("Long", place.getLatLng().longitude);
+                        bar.put("Address", place.getAddress());
+                        bar.put("PhoneNumber", place.getPhoneNumber());
+                        bar.put("Rating", place.getRating());
+                        bar.put("coordinates", point);
+                        bar.put("StartTime", startTime.getText().toString());
+                        bar.put("EndTime", endTime.getText().toString());
+                        bar.put("Specials", specials.getText().toString());
+                        checkDays(bar);
+                        bar.setACL(acl);
+                        bar.saveInBackground();
+                        main.swapFragment(map, false);
+                    }
+                }
+            });
         }
-        main.swapFragment(map, false); //Go Back to Home Page
+
     }
 
 
@@ -247,13 +274,6 @@ public class AddLocationFragment extends Fragment {
         if (requestCode == PLACE_AUTOCOMPLETE_REQUEST_CODE) {
             if (resultCode == Activity.RESULT_OK) {
                 place = PlaceAutocomplete.getPlace(con, data);
-                Log.i(TAG, "Name: " + place.getName());
-                Log.i(TAG, "Id: " + place.getId());
-                Log.i(TAG, "LatLng: " + place.getLatLng());
-                Log.i(TAG, "Address: " + place.getAddress());
-                Log.i(TAG, "Phone Number: " + place.getPhoneNumber());
-                Log.i(TAG, "Rating: " + place.getRating());
-
                 name.setText(place.getName());
                 address.setText(place.getAddress());
                 phone.setText(place.getPhoneNumber());
@@ -280,6 +300,22 @@ public class AddLocationFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        if(getActivity() != null) {
+            getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if(getActivity() != null) {
+            getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR);
+        }
+    }
+
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -290,6 +326,9 @@ public class AddLocationFragment extends Fragment {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
+
+
+
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);
