@@ -263,17 +263,12 @@ public class Mapfragment extends Fragment implements OnMapReadyCallback, GoogleM
         super.onResume();
         Log.d(TAG, "On Resume");
         position.beginUpdates();
-        if(getActivity() != null) {
-            getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        }
+
     }
 
     @Override
     public void onPause() {
         position.endUpdates();
-        if(getActivity() != null) {
-            getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR);
-        }
         super.onPause();
     }
 

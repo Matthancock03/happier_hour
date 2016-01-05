@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string-array name="filter_parameters">
+        <item>Distance</item>
+        <item>Rating</item>
+        <item>Day Of Week</item>
+    </string-array>
+    <string-array name="search_parameters">
+        <item>Name</item>
+        <item>Start Time</item>
+        <item>End Time</item>
+        <item>Day Of Week</item>
+        <item>Specials</item>
+    </string-array>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
     <attr format="boolean" name="isLightTheme"/>
