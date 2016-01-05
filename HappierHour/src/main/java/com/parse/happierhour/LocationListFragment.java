@@ -24,6 +24,7 @@ public class LocationListFragment extends ListFragment {
     ArrayList<ParseObject> bars = new ArrayList<>();
     LocationListAdapter adapter;
     LatLng location;
+    MainActivity main;
     private OnFragmentInteractionListener mListener;
 
     // TODO: Rename and change types of parameters
@@ -47,7 +48,7 @@ public class LocationListFragment extends ListFragment {
 
         if (getArguments() != null) {
         }
-
+        main = (MainActivity)getActivity();
         setListAdapter(adapter);
     }
 
@@ -78,6 +79,10 @@ public class LocationListFragment extends ListFragment {
             // fragment is attached to one) that an item has been selected.
             //mListener.onFragmentInteraction(DummyContent.ITEMS.get(position).id);
         }
+        DisplayLocationFragment display = new DisplayLocationFragment();
+
+        display.bar = bars.get(position);
+        main.swapFragment(display, false);
     }
 
     public interface OnFragmentInteractionListener {

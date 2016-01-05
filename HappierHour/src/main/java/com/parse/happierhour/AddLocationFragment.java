@@ -42,10 +42,10 @@ public class AddLocationFragment extends Fragment {
     MainActivity main;
     int PLACE_AUTOCOMPLETE_REQUEST_CODE = 1;
     Place place;
-    Button saveButton;
-    EditText tags, startTime, endTime;
-    TextView name, address, phone;
-    CheckBox mon,tues,wed,thurs,fri,sat,sun;
+    Button saveButton, addSpecial;
+    EditText tags, startTime, endTime, item, price;
+    TextView name, address, phone, specials;
+    CheckBox mon, tues, wed, thurs, fri, sat, sun;
     Context con;
 
     private OnFragmentInteractionListener mListener;
@@ -77,29 +77,46 @@ public class AddLocationFragment extends Fragment {
 
         View view = inflater.inflate(
                 R.layout.fragment_add_location, container, false);
-        main = (MainActivity)getActivity();
+        main = (MainActivity) getActivity();
 
-        saveButton = (Button)view.findViewById(R.id.add_location_button);
+        name = (TextView) view.findViewById(R.id.location_list_name);
+        address = (TextView) view.findViewById(R.id.location_address);
+        phone = (TextView) view.findViewById(R.id.location_phone);
+        specials = (TextView) view.findViewById(R.id.specials_display);
+
+        tags = (EditText) view.findViewById(R.id.tags);
+        startTime = (EditText) view.findViewById(R.id.start_time);
+        endTime = (EditText) view.findViewById(R.id.end_time);
+        item = (EditText) view.findViewById(R.id.item_name);
+        price = (EditText) view.findViewById(R.id.item_price);
+
+        mon = (CheckBox) view.findViewById(R.id.monday);
+        tues = (CheckBox) view.findViewById(R.id.tuesday);
+        wed = (CheckBox) view.findViewById(R.id.wednesday);
+        thurs = (CheckBox) view.findViewById(R.id.thursday);
+        fri = (CheckBox) view.findViewById(R.id.friday);
+        sat = (CheckBox) view.findViewById(R.id.saturday);
+        sun = (CheckBox) view.findViewById(R.id.sunday);
+        con = getActivity();
+
+        saveButton = (Button) view.findViewById(R.id.add_location_button);
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 saveLocation();
             }
         });
-        name = (TextView) view.findViewById(R.id.location_list_name);
-        address = (TextView) view.findViewById(R.id.location_address);
-        phone = (TextView) view.findViewById(R.id.location_phone);
-        tags = (EditText) view.findViewById(R.id.tags);
-        startTime = (EditText) view.findViewById(R.id.start_time);
-        endTime = (EditText) view.findViewById(R.id.end_time);
-        mon = (CheckBox)view.findViewById(R.id.monday);
-        tues = (CheckBox)view.findViewById(R.id.tuesday);
-        wed = (CheckBox)view.findViewById(R.id.wednesday);
-        thurs = (CheckBox)view.findViewById(R.id.thursday);
-        fri = (CheckBox)view.findViewById(R.id.friday);
-        sat = (CheckBox)view.findViewById(R.id.saturday);
-        sun = (CheckBox)view.findViewById(R.id.sunday);
-        con = getActivity();
+        addSpecial = (Button) view.findViewById(R.id.submit_item);
+        addSpecial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String temp = specials.getText().toString();
+                temp += item.getText().toString() + " " + price.getText().toString() + "\n";
+                specials.setText(temp);
+                item.setText("");
+                price.setText("");
+            }
+        });
         // Inflate the layout for this fragment
         findPlace(view);
         return view;
@@ -149,13 +166,14 @@ public class AddLocationFragment extends Fragment {
         }
     }
 
-    public void saveLocation(){
+
+    public void saveLocation() {
 
         Mapfragment map = new Mapfragment();
         Log.i(TAG, "Save Location ");
 
 
-        if(place != null) {
+        if (place != null) {
             ParseGeoPoint point = new ParseGeoPoint();
             point.setLatitude(place.getLatLng().latitude);
             point.setLongitude(place.getLatLng().longitude);
@@ -175,6 +193,7 @@ public class AddLocationFragment extends Fragment {
             bar.put("coordinates", point);
             bar.put("StartTime", startTime.getText().toString());
             bar.put("EndTime", endTime.getText().toString());
+            bar.put("Specials", specials.getText().toString());
             checkDays(bar);
             bar.setACL(acl);
             bar.saveInBackground();
@@ -186,39 +205,39 @@ public class AddLocationFragment extends Fragment {
 
     private void checkDays(ParseObject bar) {
 
-        if(mon.isChecked()){
-           bar.put("monday", true);
-        }else{
+        if (mon.isChecked()) {
+            bar.put("monday", true);
+        } else {
             bar.put("monday", false);
         }
-        if(tues.isChecked()){
+        if (tues.isChecked()) {
             bar.put("tuesday", true);
-        }else{
+        } else {
             bar.put("tuesday", false);
         }
-        if(wed.isChecked()){
+        if (wed.isChecked()) {
             bar.put("wednesday", true);
-        }else{
+        } else {
             bar.put("wednesday", false);
         }
-        if(thurs.isChecked()){
+        if (thurs.isChecked()) {
             bar.put("thursday", true);
-        }else{
+        } else {
             bar.put("thursday", false);
         }
-        if(fri.isChecked()){
+        if (fri.isChecked()) {
             bar.put("friday", true);
-        }else{
+        } else {
             bar.put("friday", false);
         }
-        if(sat.isChecked()){
+        if (sat.isChecked()) {
             bar.put("saturday", true);
-        }else{
+        } else {
             bar.put("saturday", false);
         }
-        if(sun.isChecked()){
+        if (sun.isChecked()) {
             bar.put("sunday", true);
-        }else{
+        } else {
             bar.put("sunday", false);
         }
     }
@@ -238,7 +257,7 @@ public class AddLocationFragment extends Fragment {
                 name.setText(place.getName());
                 address.setText(place.getAddress());
                 phone.setText(place.getPhoneNumber());
-                List<Integer> types =  place.getPlaceTypes();
+                List<Integer> types = place.getPlaceTypes();
 
                 /*
                  * Bar == 9
@@ -260,12 +279,13 @@ public class AddLocationFragment extends Fragment {
             }
         }
     }
+
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
      * to the activity and potentially other fragments contained in that
      * activity.
-     * <p/>
+     * <p>
      * See the Android Training lesson <a href=
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.

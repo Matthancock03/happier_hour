@@ -2,27 +2,29 @@ package com.parse.happierhour;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
+import android.util.Base64;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.parse.ParseObject;
 
-import java.io.File;
+import java.io.ByteArrayOutputStream;
 
 
 /**
@@ -34,15 +36,16 @@ import java.io.File;
  * create an instance of this fragment.
  */
 public class DisplayLocationFragment extends Fragment {
-
+    static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final String TAG = "DisplayFragment";
     private static HorizontalScrollView horizonalscrollview;
     private TextView namefield;
     private TextView addressfield;
     private TextView phonenumberfield;
-    private TextView ratingfield, hours;
+    private TextView ratingfield, hours, specials;
     private LinearLayout gallery;
     private ListView reviews;
+    private Button editHours, editSpecials, takePicture;
     ParseObject bar;
 
     private OnFragmentInteractionListener mListener;
@@ -80,7 +83,28 @@ public class DisplayLocationFragment extends Fragment {
         gallery = (LinearLayout) view.findViewById(R.id.menuPics);
         reviews = (ListView) view.findViewById(R.id.ReviewListView);
         hours = (TextView) view.findViewById(R.id.hoursField);
+        specials = (TextView) view.findViewById(R.id.specialsField);
+        editHours = (Button)view.findViewById(R.id.edit_hours);
+        editHours.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
+        editSpecials = (Button)view.findViewById(R.id.edit_specials);
+        editSpecials.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        takePicture = (Button)view.findViewById(R.id.take_photo);
+        takePicture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dispatchTakePictureIntent();
+            }
+        });
 
         if(bar != null){
             namefield.setText(bar.getString("Name"));
@@ -88,6 +112,7 @@ public class DisplayLocationFragment extends Fragment {
             //phonenumberfield.setText(bar.getString("PhoneNumber"));
             //ratingfield.setText(String.valueOf(bar.getDouble("Rating")).substring(0,4));
             hours.setText(bar.getString("StartTime") + " - " + bar.getString("EndTime"));
+            specials.setText(bar.getString("Specials"));
         }
 
         String ExternalStorageDirectoryPath = Environment
@@ -187,16 +212,60 @@ public class DisplayLocationFragment extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            imageBitmap = getResizedBitmap(imageBitmap, 500);
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            lp.setMargins(5, 0, 0, 0);
+            ImageView image = new ImageView(getActivity());
+            image.setMaxHeight(100);
+            image.setMaxWidth(100);
+            image.setLayoutParams(lp);
+            image.setImageBitmap(imageBitmap);
+            gallery.addView(image);
+        }
+    }
+
+    public static Bitmap getResizedBitmap(Bitmap image, int maxSize) {
+        int width = image.getWidth();
+        int height = image.getHeight();
+
+        float bitmapRatio = (float)width / (float) height;
+        if (bitmapRatio > 0) {
+            width = maxSize;
+            height = (int) (width / bitmapRatio);
+        } else {
+            height = maxSize;
+            width = (int) (height * bitmapRatio);
+        }
+        return Bitmap.createScaledBitmap(image, width, height, true);
+    }
+
+    // Use this to convert image before saving to Firebase
+    public static String bitmapToBase64(Bitmap bitmap) {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
+        byte[] byteArray = byteArrayOutputStream .toByteArray();
+        return Base64.encodeToString(byteArray, Base64.DEFAULT);
+    }
+    //Use this to convert retrieved image to bitmap for displaying
+    public static Bitmap base64ToBitmap(String b64) {
+        byte[] imageAsBytes = Base64.decode(b64.getBytes(), Base64.DEFAULT);
+        return BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length);
+    }
+
+
+
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
