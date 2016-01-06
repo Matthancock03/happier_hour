@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -45,8 +46,12 @@ public class DisplayLocationFragment extends Fragment {
     private TextView ratingfield, hours, specials;
     private LinearLayout gallery;
     private ListView reviews;
-    private Button editHours, editSpecials, takePicture;
+    private Button editHours, editSpecials, takePicture, addreview;
     ParseObject bar;
+    MainActivity main;
+
+    int hoursCount = 0;
+    int specialCount = 0;
 
     private OnFragmentInteractionListener mListener;
 
@@ -75,6 +80,8 @@ public class DisplayLocationFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_display_location, container, false);
 
+        main = (MainActivity)getActivity();
+
         horizonalscrollview = (HorizontalScrollView) view.findViewById(R.id.menuPictures);
         namefield = (TextView) view.findViewById(R.id.nameField);
         //addressfield = (TextView) view.findViewById(R.id.addressField);
@@ -82,27 +89,62 @@ public class DisplayLocationFragment extends Fragment {
         //ratingfield = (TextView) view.findViewById(R.id.ratingField);
         gallery = (LinearLayout) view.findViewById(R.id.menuPics);
         reviews = (ListView) view.findViewById(R.id.ReviewListView);
-        hours = (TextView) view.findViewById(R.id.hoursField);
-        specials = (TextView) view.findViewById(R.id.specialsField);
+        hours = (EditText) view.findViewById(R.id.hoursField);
+        specials = (EditText) view.findViewById(R.id.specialsField);
         editHours = (Button)view.findViewById(R.id.edit_hours);
-        editHours.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
         editSpecials = (Button)view.findViewById(R.id.edit_specials);
+        takePicture = (Button)view.findViewById(R.id.take_photo);
+        addreview = (Button)view.findViewById(R.id.add_review);
+
+        hours.setFocusable(false);
+        specials.setFocusable(false);
+
         editSpecials.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                specialCount++;
+                if(specialCount%2 != 0){
+                    specials.setFocusable(true);
+                    specials.setClickable(true);
+                    specials.setFocusableInTouchMode(true);
+                }
+                else{
+                    specials.setFocusable(false);
+                    specials.setFocusableInTouchMode(false);
+                    specials.setClickable(false);
+                }
             }
         });
-        takePicture = (Button)view.findViewById(R.id.take_photo);
+
+        editHours.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hoursCount++;
+                if(hoursCount%2 != 0){
+                    hours.setFocusable(true);
+                    hours.setFocusableInTouchMode(true);
+                    hours.setClickable(true);
+                }
+                else {
+                    hours.setFocusable(false);
+                    hours.setClickable(false);
+                    hours.setFocusableInTouchMode(false);
+                }
+            }
+        });
+
         takePicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dispatchTakePictureIntent();
+            }
+        });
+
+        addreview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO: add functionality to this
+                main.swapFragment(new ReviewFragment(), true);
             }
         });
 

@@ -65,7 +65,8 @@
                     android:layout_toEndOf="@+id/textView"
                     android:textColor="#7b1900"
                     android:text="9:00 - 11:00"
-                    android:paddingLeft="10dp" />
+                    android:paddingLeft="10dp"
+                    />
 
             </RelativeLayout>
 
@@ -108,7 +109,8 @@
                     android:layout_alignParentEnd="true"
                     android:layout_toEndOf="@+id/textView2"
                     android:textColor="#7b1900"
-                    android:paddingTop="10dp" />
+                    android:paddingTop="10dp"
+                    />
             </RelativeLayout>
 
             <Button
