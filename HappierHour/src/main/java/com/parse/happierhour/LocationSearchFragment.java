@@ -1,11 +1,11 @@
 package com.parse.happierhour;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -91,6 +91,7 @@ public class LocationSearchFragment extends Fragment {
         adapter = new LocationListAdapter(con, 1, bars, myLocation);
         searchResults = (ListView)view.findViewById(R.id.search_location_results_list);
         searchResults.setAdapter(adapter);
+
         return view;
     }
 

@@ -1,7 +1,7 @@
--injars /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/transforms/jarMerging/debug/jars/1/1f/combined.jar
--outjars /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/multi-dex/debug/componentClasses.jar
+-injars /Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/transforms/jarMerging/debug/jars/1/1f/combined.jar
+-outjars /Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/multi-dex/debug/componentClasses.jar
 
--libraryjars /Users/Misanthropic/Library/Android/sdk/build-tools/23.0.1/lib/shrinkedAndroid.jar
+-libraryjars /Users/jianganson72/Library/Android/sdk/build-tools/23.0.1/lib/shrinkedAndroid.jar
 
 -forceprocessing
 -dontoptimize
@@ -9,7 +9,7 @@
 -dontusemixedcaseclassnames
 -dontpreverify
 -dontwarn
--printconfiguration /Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/multi-dex/debug/components.flags
+-printconfiguration /Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/multi-dex/debug/components.flags
 
 
 -keep class com.parse.happierhour.StarterApplication {

@@ -9,29 +9,19 @@
 package com.parse.happierhour;
 
 import android.app.Fragment;
-import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import com.facebook.FacebookSdk;
-import com.google.android.gms.location.places.Place;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
+
 import com.parse.ParseAnalytics;
-import com.parse.Parse;
-import com.parse.ParseObject;
-import com.google.android.gms.*;
 
 public class MainActivity extends AppCompatActivity implements HomePageFragment.OnFragmentInteractionListener, Mapfragment.OnFragmentInteractionListener,
-AddLocationFragment.OnFragmentInteractionListener, LocationSearchFragment.OnFragmentInteractionListener, DisplayLocationFragment.OnFragmentInteractionListener, LocationListFragment.OnFragmentInteractionListener{
+AddLocationFragment.OnFragmentInteractionListener, LocationSearchFragment.OnFragmentInteractionListener, DisplayLocationFragment.OnFragmentInteractionListener,
+        LocationListFragment.OnFragmentInteractionListener, ReviewFragment.OnFragmentInteractionListener{
 
     Fragment fragment;
     FragmentTransaction transaction;
