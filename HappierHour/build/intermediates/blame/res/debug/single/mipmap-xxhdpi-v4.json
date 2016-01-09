@@ -1,23 +1,11 @@
 [
     {
-        "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4/cocktail.jpg",
-        "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/res/mipmap-xxhdpi/cocktail.jpg"
-    },
-    {
-        "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4/bar3.jpg",
-        "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/res/mipmap-xxhdpi/bar3.jpg"
-    },
-    {
         "merged": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4/bar3.jpg",
         "source": "/Users/jianganson72/Desktop/happier_hour/HappierHour/src/main/res/mipmap-xxhdpi/bar3.jpg"
     },
     {
         "merged": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4/ic_launcher.png",
         "source": "/Users/jianganson72/Desktop/happier_hour/HappierHour/src/main/res/mipmap-xxhdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4/ic_launcher.png",
-        "source": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },
     {
         "merged": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4/cocktail.jpg",

@@ -1,29 +1,5 @@
 [
     {
-        "outputFile": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/build/intermediates/res/merged/debug/values-w820dp-v13/values-w820dp-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 57,
-                    "endOffset": 108
-                },
-                "from": {
-                    "file": "/Users/Misanthropic/repos/Android/happier_hour/HappierHour/src/main/res/values-w820dp/dimens.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 606,
-                        "endColumn": 57,
-                        "endOffset": 659
-                    }
-                }
-            }
-        ]
-    },
-    {
         "outputFile": "/Users/jianganson72/Desktop/happier_hour/HappierHour/build/intermediates/res/merged/debug/values-w820dp-v13/values-w820dp-v13.xml",
         "map": [
             {

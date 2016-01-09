@@ -41,12 +41,20 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_api_key" />
+        <!--
         <meta-data
             android:name="com.parse.APPLICATION_ID"
             android:value="@string/parse_app_id" />
         <meta-data
             android:name="com.parse.CLIENT_KEY"
             android:value="@string/parse_client_key" />
+        -->
+        <meta-data
+            android:name="com.parse.APPLICATION_ID"
+            android:value="KC0HAxq548WZ68kwcORTynEinnqh1iraD8GunJjX" />
+        <meta-data
+            android:name="com.parse.CLIENT_KEY"
+            android:value="Djv5Dt2o8Z3Yes9NlMdNmFOuTblI5ADKFccGlNBq" />
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />

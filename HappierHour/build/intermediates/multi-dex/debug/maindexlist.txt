@@ -193,6 +193,7 @@ com/parse/ParseInstallation.class
 com/google/android/gms/common/api/Api.class
 android/support/v4/app/FragmentManagerImpl$1.class
 android/support/design/widget/Snackbar$4.class
+com/parse/ParseRequest.class
 com/google/android/gms/R$styleable.class
 com/google/android/gms/common/GooglePlayServicesUtil.class
 com/google/common/util/concurrent/AbstractService$StateSnapshot.class
@@ -483,8 +484,8 @@ com/facebook/CallbackManager$Factory.class
 com/google/common/reflect/TypeToken$TypeCollector.class
 com/google/common/primitives/Doubles.class
 com/google/android/gms/common/api/OptionalPendingResult.class
-com/google/common/collect/LinkedHashMultimap$ValueEntry.class
 com/parse/ParseQuery.class
+com/google/common/collect/LinkedHashMultimap$ValueEntry.class
 com/google/common/cache/CacheBuilderSpec.class
 com/google/android/gms/location/LocationStatusCodes.class
 android/support/design/widget/CoordinatorLayout$ViewElevationComparator.class
