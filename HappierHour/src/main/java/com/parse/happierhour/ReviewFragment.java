@@ -7,24 +7,28 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ListView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link ReviewFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link ReviewFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.parse.FindCallback;
+import com.parse.ParseACL;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseQueryAdapter;
+
+import java.util.List;
+
 public class ReviewFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    ParseQueryAdapter<ParseObject> reviewAdapter;
+    MainActivity main;
+    ListView reviewlistview2;
+    ImageButton Addreviewbtn;
+    EditText reviewInput;
+    ReviewItemAdapter adp;
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -32,38 +36,75 @@ public class ReviewFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ReviewFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ReviewFragment newInstance(String param1, String param2) {
-        ReviewFragment fragment = new ReviewFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_review, container, false);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_review, container, false);
+        reviewlistview2 = (ListView) view.findViewById(R.id.ReviewListView2);
+        Addreviewbtn = (ImageButton) view.findViewById(R.id.addreviewbtn);
+        reviewInput = (EditText) view.findViewById(R.id.ReviewInput);
+
+        loadReviews();
+
+        //updateData();
+
+        Addreviewbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addReview();
+            }
+        });
+
+
+
+        return view;
+    }
+
+    public void loadReviews(){
+        //Initialize ParseQueryAdapter
+        reviewAdapter = new ParseQueryAdapter<>(getActivity(), "Reviews");
+        reviewAdapter.setTextKey("Review");
+
+        //Initialize ListView
+
+        adp = new ReviewItemAdapter(getActivity());
+        reviewlistview2.setAdapter(reviewAdapter);
+        reviewAdapter.loadObjects();
+    }
+
+    public void addReview(){
+        ParseObject reviews = new ParseObject("Reviews");
+
+        DisplayLocationFragment dis = new DisplayLocationFragment();
+
+        ParseACL acl = new ParseACL();
+        acl.setPublicReadAccess(true);
+        acl.setPublicWriteAccess(true);
+        reviews.put("Name", DisplayLocationFragment.namefield.getText().toString());
+        reviews.put("Review", reviewInput.getText().toString());
+        reviews.setACL(acl);
+        reviews.saveInBackground();
+    }
+
+    public void updateData(){
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Reviews");
+
+        query.whereEqualTo("Name", DisplayLocationFragment.namefield.getText().toString());
+
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+
+
+            }
+        });
     }
 
     // TODO: Rename method, update argument and hook method into UI event

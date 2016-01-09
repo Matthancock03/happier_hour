@@ -24,6 +24,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.parse.ParseObject;
+import com.parse.ParseQueryAdapter;
 
 import java.io.ByteArrayOutputStream;
 
@@ -40,9 +41,9 @@ public class DisplayLocationFragment extends Fragment {
     static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final String TAG = "DisplayFragment";
     private static HorizontalScrollView horizonalscrollview;
-    private TextView namefield;
-    private TextView addressfield;
-    private TextView phonenumberfield;
+    static TextView namefield;
+    //private TextView addressfield;
+    //private TextView phonenumberfield;
     private TextView ratingfield, hours, specials;
     private LinearLayout gallery;
     private ListView reviews;
@@ -52,6 +53,8 @@ public class DisplayLocationFragment extends Fragment {
 
     int hoursCount = 0;
     int specialCount = 0;
+
+    ParseQueryAdapter<ParseObject> reviewAdapter;
 
     private OnFragmentInteractionListener mListener;
 
@@ -81,6 +84,8 @@ public class DisplayLocationFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_display_location, container, false);
 
         main = (MainActivity)getActivity();
+
+
 
         horizonalscrollview = (HorizontalScrollView) view.findViewById(R.id.menuPictures);
         namefield = (TextView) view.findViewById(R.id.nameField);
@@ -133,6 +138,8 @@ public class DisplayLocationFragment extends Fragment {
             }
         });
 
+        loadReviews();
+
         takePicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -174,6 +181,18 @@ public class DisplayLocationFragment extends Fragment {
 
         // Inflate the layout for this fragment
         return view;
+    }
+
+    public void loadReviews(){
+        //Initialize ParseQueryAdapter
+        reviewAdapter = new ParseQueryAdapter<>(getActivity(), "Reviews");
+        reviewAdapter.setTextKey("Review");
+
+        //Initialize ListView
+
+        //adp = new ReviewItemAdapter(getActivity());
+        reviews.setAdapter(reviewAdapter);
+        reviewAdapter.loadObjects();
     }
 
     View insertPhoto(String path){
