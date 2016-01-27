@@ -1,4 +1,4 @@
-# happier_hour
+# Happier Hour
 
 Android app that shows nearby happy hours and lists the specials if available.
 Facebook and Google+ OAuth integration.
